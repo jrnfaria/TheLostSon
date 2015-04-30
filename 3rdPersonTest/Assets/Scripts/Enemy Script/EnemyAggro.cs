@@ -53,7 +53,7 @@ public class EnemyAggro : MonoBehaviour {
 
 			patrolPosition=transform.position + FinalTemp;
 				inPatrolPosition=false;
-				Debug.Log (	patrolPosition);
+				//Debug.Log (	patrolPosition);
 			}
 			else 
 			{

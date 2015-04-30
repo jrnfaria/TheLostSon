@@ -34,7 +34,7 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if(other.tag=="Enemy1"||other.tag=="Enemy2")
+		if(other.tag=="Enemy")
 		Destroy(other.transform.parent.gameObject);
 	}
 }

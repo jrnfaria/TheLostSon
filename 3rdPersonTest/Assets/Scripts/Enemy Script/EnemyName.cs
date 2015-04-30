@@ -17,6 +17,9 @@ public class EnemyName : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position = enemy.position + positionOffset;
+		transform.LookAt (2 * transform.position-Camera.main.transform.position);
+		//transform.localEulerAngles = new Vector3 (0, 180, 0);
+
 
 	}
 }
