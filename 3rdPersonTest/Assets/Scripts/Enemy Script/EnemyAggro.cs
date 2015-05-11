@@ -28,7 +28,9 @@ public class EnemyAggro : MonoBehaviour {
 		limitSupZ = transform.parent.position.z + GetComponentInParent<EnemySpawner>().range;
 		limitInfZ = transform.parent.position.z - GetComponentInParent<EnemySpawner>().range;
 	}
-	
+
+
+
 	// Update is called once per frame
 	void Update () {
 		float dist = Mathf.Abs (Vector3.Distance(hero.transform.position,transform.position));

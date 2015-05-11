@@ -29,8 +29,9 @@ public class CharacterMovement : MonoBehaviour {
 		moveDirection.y -= gravity * Time.deltaTime;
 		controller.Move(moveDirection * Time.deltaTime);
 
-		Vector3 CameraDir = new Vector3 (Camera.main.transform.position.x,0,Camera.main.transform.position.z);
-		transform.LookAt(transform.position + CameraDir);
+		//Vector3 CameraDir = new Vector3 (Camera.main.transform.position.x,0,Camera.main.transform.position.z);
+		//transform.LookAt(transform.position + CameraDir);
+		transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z); 
 	}
 
 	void OnTriggerEnter(Collider other) {

@@ -11,10 +11,11 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		InvokeRepeating ("recoverNumbers", 3f, 3f);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void recoverNumbers () {
 		if (transform.childCount < maxNumOfEnemies) {
 			GameObject enem = Instantiate (enemy, new Vector3 (transform.position.x + Random.Range (-range, range), transform.position.y, transform.position.z + Random.Range (-range, range)), Quaternion.identity) as GameObject;
 			enem.transform.parent = transform;
