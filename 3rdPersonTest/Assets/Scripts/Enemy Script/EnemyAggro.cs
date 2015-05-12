@@ -10,10 +10,10 @@ public class EnemyAggro : MonoBehaviour {
 
 
 	//terrain limit
-	private float limitSupX;
+	/*private float limitSupX;
 	private float limitInfX;
 	private float limitSupZ;
-	private float limitInfZ;
+	private float limitInfZ;*/
 
 	//random movement
 	private Vector3 patrolPosition;
@@ -23,10 +23,10 @@ public class EnemyAggro : MonoBehaviour {
 
 		hero=GameObject.FindGameObjectWithTag("Character");
 		inPatrolPosition = true;
-		limitSupX = transform.parent.position.x + GetComponentInParent<EnemySpawner>().range;
+		/*limitSupX = transform.parent.position.x + GetComponentInParent<EnemySpawner>().range;
 		limitInfX = transform.parent.position.x - GetComponentInParent<EnemySpawner>().range;
 		limitSupZ = transform.parent.position.z + GetComponentInParent<EnemySpawner>().range;
-		limitInfZ = transform.parent.position.z - GetComponentInParent<EnemySpawner>().range;
+		limitInfZ = transform.parent.position.z - GetComponentInParent<EnemySpawner>().range;*/
 	}
 
 
@@ -54,12 +54,18 @@ public class EnemyAggro : MonoBehaviour {
 			Vector3 FinalTemp = new Vector3(Temp.x, 0, Temp.z);
 
 			patrolPosition=transform.position + FinalTemp;
-				inPatrolPosition=false;
+			inPatrolPosition=false;
+
+
+
 				//Debug.Log (	patrolPosition);
 			}
 			else 
 			{
 				transform.position=Vector3.MoveTowards(transform.position,patrolPosition,2*Time.deltaTime);
+				transform.rotation = Quaternion.Slerp(transform.rotation,
+				                                      Quaternion.LookRotation(patrolPosition - transform.position), /*rotation*/speed*Time.deltaTime);
+
 				if(Vector3.Distance(transform.position,patrolPosition)==0)
 					inPatrolPosition=true;
 			}

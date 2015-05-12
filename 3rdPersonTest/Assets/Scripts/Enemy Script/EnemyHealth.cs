@@ -14,7 +14,12 @@ public class EnemyHealth : MonoBehaviour
 
 	void Update()
 	{
-	healthRatio = health / fullHealth;
+	healthRatio = health / (float)fullHealth;
+	}
+
+	public float getHealthRatio()
+	{
+		return healthRatio;
 	}
 }
 
