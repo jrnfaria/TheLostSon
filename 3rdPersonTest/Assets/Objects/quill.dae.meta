@@ -1,46 +1,21 @@
 fileFormatVersion: 2
-guid: f62494e46bb1d9243afacd8b18b66489
-timeCreated: 1431609446
+guid: 433923a50c9617a47be3b25d3f527c53
+timeCreated: 1431609443
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: Camera
-    100002: Cone
-    100004: Cone_001
-    100006: Cone_002
-    100008: Cone_003
-    100010: Lamp
-    100012: Sphere
-    100014: Sphere_001
-    100016: //RootNode
+    100002: Cube
+    100004: Lamp
+    100006: //RootNode
     400000: Camera
-    400002: Cone
-    400004: Cone_001
-    400006: Cone_002
-    400008: Cone_003
-    400010: Lamp
-    400012: Sphere
-    400014: Sphere_001
-    400016: //RootNode
-    2300000: Cone
-    2300002: Cone_001
-    2300004: Cone_002
-    2300006: Cone_003
-    2300008: Sphere
-    2300010: Sphere_001
-    3300000: Cone
-    3300002: Cone_001
-    3300004: Cone_002
-    3300006: Cone_003
-    3300008: Sphere
-    3300010: Sphere_001
-    4300000: Sphere
-    4300002: Sphere_001
-    4300004: Cone_003
-    4300006: Cone_002
-    4300008: Cone_001
-    4300010: Cone
+    400002: Cube
+    400004: Lamp
+    400006: //RootNode
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube
     9500000: //RootNode
   materials:
     importMaterials: 1

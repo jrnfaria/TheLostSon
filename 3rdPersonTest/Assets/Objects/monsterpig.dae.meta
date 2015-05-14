@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1663fc9e2ede57c4e80c30edf5e994e7
-timeCreated: 1431435501
+guid: 28a2ce1bc403dd44689a0026b0de5288
+timeCreated: 1431609442
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -28,9 +28,9 @@ ModelImporter:
     3300004: Cube
     3300006: Sphere
     4300000: Sphere
-    4300002: Cone
+    4300002: Cube
     4300004: Cone_001
-    4300006: Cube
+    4300006: Cone
     9500000: //RootNode
   materials:
     importMaterials: 1
