@@ -21,7 +21,7 @@ public class HealthBarController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Transform cam = Camera.main.transform;
-		Debug.Log (enemyHealth.getHealthRatio());
+		//Debug.Log (enemyHealth.getHealthRatio());
 		redBar.transform.position = enemyBody.transform.position+offset;
 
 

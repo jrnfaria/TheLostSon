@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quest>
+	<num>1</num>
+	<startconditions>
+		<level></level>
+		<previousquest></previousquest>
+		</startconditions>
+	</startconditions>
+	<giver></giver>
+	<description></description>
+	<objective></objective>
+    <reward></reward>
+</quest>
