@@ -30,7 +30,8 @@ public class HealthBarController : MonoBehaviour {
 		redBar.transform.position = enemyBody.transform.position+offset;
 	
 
-		//greenBar.transform.localScale = new Vector3 (healthSize*enemyHealth.getHealthRatio(),greenBar.transform.localScale.y,greenBar.transform.localScale.z);
+		redBar.transform.localScale = new Vector3 (healthSize*enemyHealth.getHealthRatio(),redBar.transform.localScale.y,redBar.transform.localScale.z);
+
 		//redBar.transform.position -= new Vector3 (healthSize*enemyHealth.getHealthRatio()/2f,0,0);
 
 		

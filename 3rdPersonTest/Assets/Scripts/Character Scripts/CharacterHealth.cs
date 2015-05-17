@@ -53,4 +53,11 @@ public class CharacterHealth : MonoBehaviour {
 		staminaSlider.value = stamina;
 		
 	}
+
+	void OnTriggerEnter(Collider other) {
+		Debug.Log (other.tag);
+		if (other.tag == "Enemy") {
+			other.GetComponent<EnemyHealth>().takeDamage(10);
+		}
+	}
 }
