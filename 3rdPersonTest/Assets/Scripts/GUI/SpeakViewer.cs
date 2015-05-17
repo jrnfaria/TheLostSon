@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class QuestIndicator : MonoBehaviour {
+public class SpeakViewer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
