@@ -15,5 +15,9 @@ public class Quest : MonoBehaviour {
 	
 	}
 
+	public string getMonster(){
+		return monster;
+	}
+
 	public virtual void startQuest(){}
 }

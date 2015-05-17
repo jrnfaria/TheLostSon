@@ -13,11 +13,12 @@ public class QuestViewer : MonoBehaviour {
 	void Start () {
 		questRange = gameObject.GetComponent<QuestRange> ();
 		questReader = gameObject.GetComponent<QuestReader> ();
+		quest = null;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.L)) {
+		if (Input.GetKey (KeyCode.Q)) {
 			showInfoQuestMenu=true;
 		}
 	}
@@ -25,7 +26,11 @@ public class QuestViewer : MonoBehaviour {
 	void OnGUI()
 	{
 		if (questRange.isDisplayedGUI()) {
-			createStartQuestGUI();
+			if(quest != null && ((KillQuest)quest).getKilledNum ()==((KillQuest)quest).getTotalNum()){
+				createEndQuestGUI();
+			}else{
+				createStartQuestGUI();
+			}
 		}else if (showInfoQuestMenu) {
 			createInfoQuestGUI();
 		}
@@ -105,4 +110,33 @@ public class QuestViewer : MonoBehaviour {
 			showInfoQuestMenu=false;
 		}
 	}
+	
+	public void createEndQuestGUI(){
+		// Make a background box
+		GUI.Box (ResizeGUI (new Rect (50, 50, 200, 400)), "\nQuest "+questReader.getQuestId());
+		
+		//Quest Description
+		string questDescr =questReader.getDescription();
+		int size = (int)((questDescr.Length*200/566)+0.5);
+		if(size<200){
+			size=200;
+		}
+		scrollPosition = GUI.BeginScrollView (ResizeGUI (new Rect(65, 100, 170, 200)), scrollPosition, ResizeGUI (new Rect(0, 0, 160, size)));
+		GUI.TextField (ResizeGUI (new Rect (0, 0, 160, size)), questDescr,"Label");
+		GUI.EndScrollView();
+		
+		if (questReader.getQuestType () == "kill") {
+			GUI.TextField (ResizeGUI (new Rect (65, 285, 170, 25)), "Enemies missing : " + ((KillQuest)quest).getKilledNum ()+"/"+((KillQuest)quest).getTotalNum());
+		}
+		
+		string reward="Reward\n\nMoney:"+questReader.getReward().money+"\nExperience:"+questReader.getReward().exp;
+		GUI.TextField (ResizeGUI (new Rect (65, 315, 170, 80)), reward);
+		
+		//Accept button
+		if (GUI.Button (ResizeGUI (new Rect (65, 410, 80, 20)), "Complete")) {
+			questRange.setDisplayedGUI (false);
+			Debug.Log ("Give reward");
+		}
+	}
+
 }

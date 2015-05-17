@@ -7,6 +7,9 @@ public class KillQuest : Quest {
 
 	// Use this for initialization
 	void Start () {
+		questReader = GameObject.FindGameObjectWithTag("Range").GetComponent<QuestReader> ();
+		monster = "";
+		number = 0;
 	}
 	
 	// Update is called once per frame
