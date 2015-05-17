@@ -23,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
 		if (health <= 0) {
 			Destroy (this.transform.parent.gameObject);
+			GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>().addExp(10);
 			KillQuest quest = GameObject.FindGameObjectWithTag("Character").GetComponent<KillQuest>();
 			Debug.Log(gameObject.name);
 			if(quest.getNumber() !=0 && quest.getMonster()==gameObject.name){
