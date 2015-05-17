@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class QuestStart : MonoBehaviour {
+public class QuestRange : MonoBehaviour {
 	private bool isInside = false;
 	private bool displayedGUI = false;
 

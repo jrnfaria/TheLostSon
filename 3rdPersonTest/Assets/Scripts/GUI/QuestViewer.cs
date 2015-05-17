@@ -3,13 +3,13 @@ using System.Collections;
 
 public class QuestViewer : MonoBehaviour {
 
-	private QuestStart questStart;
+	private QuestRange questRange;
 	private QuestReader questReader;
 	private Vector2 scrollPosition = Vector2.zero;
 
 	// Use this for initialization
 	void Start () {
-		questStart = gameObject.GetComponent<QuestStart> ();
+		questRange = gameObject.GetComponent<QuestRange> ();
 		questReader = gameObject.GetComponent<QuestReader> ();
 	}
 	
@@ -19,7 +19,7 @@ public class QuestViewer : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if (questStart.isDisplayedGUI()) {
+		if (questRange.isDisplayedGUI()) {
 			// Make a background box
 			GUI.Box (ResizeGUI (new Rect (50, 50, 200, 400)), "\nQuest "+questReader.getQuestId());
 
@@ -39,13 +39,13 @@ public class QuestViewer : MonoBehaviour {
 			//Accept button
 			if (GUI.Button (ResizeGUI (new Rect (65, 410, 80, 20)), "Accept")) {
 				Debug.Log ("Accept");
-				questStart.setDisplayedGUI(false);
+				questRange.setDisplayedGUI(false);
 			}
 			
 			//Reject button
 			if (GUI.Button (ResizeGUI (new Rect (155, 410, 80, 20)), "Reject")) {
 				Debug.Log ("Reject");
-				questStart.setDisplayedGUI(false);
+				questRange.setDisplayedGUI(false);
 			}
 		}
 	}
