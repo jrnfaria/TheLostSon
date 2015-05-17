@@ -5,6 +5,7 @@ public class QuestStart : MonoBehaviour {
 	private bool isInside = false;
 	private bool displayedGUI = false;
 
+
 	// Use this for initialization
 	void Start () {
 	}

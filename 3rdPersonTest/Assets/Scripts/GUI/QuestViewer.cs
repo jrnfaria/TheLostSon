@@ -4,11 +4,13 @@ using System.Collections;
 public class QuestViewer : MonoBehaviour {
 
 	private QuestStart questStart;
+	private QuestReader questReader;
 	private Vector2 scrollPosition = Vector2.zero;
 
 	// Use this for initialization
 	void Start () {
-		questStart = GameObject.FindGameObjectWithTag ("Range").GetComponent<QuestStart> ();
+		questStart = gameObject.GetComponent<QuestStart> ();
+		questReader = gameObject.GetComponent<QuestReader> ();
 	}
 	
 	// Update is called once per frame
@@ -19,10 +21,10 @@ public class QuestViewer : MonoBehaviour {
 	{
 		if (questStart.isDisplayedGUI()) {
 			// Make a background box
-			GUI.Box (ResizeGUI (new Rect (50, 50, 200, 400)), "\nQuest + id");
+			GUI.Box (ResizeGUI (new Rect (50, 50, 200, 400)), "\nQuest "+questReader.getQuestId());
 
 			//Quest Description
-			string questDescr ="Ola Joao ndsf hsdhkfdks hf hkdshfhysdfgusdbbfhbshdh khfsdb hfds bkjfjsd sd - fdahsfjkdah f gfhgdfj hfg dgfghd gf gf dhf g dg jfghdghf hgd fhdakhfhd gfhdggfdgfh ghdh g hdgfgkdgkafhds fhd ggf dggdhfd f dhhf gf gdgfhhdgkfsgdf gdh gfhdgjfdg fdghdf gfd gd sgf hsdgfg jdfsj fhd id sihgjfshgsifdhgiofhih ih ifd hf nvfhn   vhhv hnvhfnhnvhhhhhhhhhh fhb vsbhfkvhsfnvnisfuoaahhs bhbf hfh hfb vfb bfhsklsbk fghfdh dghhgfkn gdf bhkgf g hdghfd ksgkf hkgfsbgh fhslfh kghfd gkdfh gdfh gfbd dskj hfdsf dihfaishd  hf hsdhf  hdsf ihd ds f ds  fh sdh fkhdfksdkf dhs f dsh hfhsdhkf dh hf hhksd hf ksfhsdhk g djshf kdsf sdhfh ihsdhfu hidsohiuf hihsduh fihsdhuf huidhsihf uisdiu hfuudsh ihfihsdu fihdus fih hsd hfdshifhihsdh fisud f hsd ufhiodidsui ou dsf fjksbdjf dskj fkj sdfh dlk fhdasjfh ldasfh lskhadf h sdlafh sdaksfhlasdhf afl dfd------.";
+			string questDescr =questReader.getDescription();
 			int size = (int)((questDescr.Length*200/566)+0.5);
 			if(size<200){
 				size=200;
@@ -31,7 +33,7 @@ public class QuestViewer : MonoBehaviour {
 			GUI.TextField (ResizeGUI (new Rect (0, 0, 160, size)), questDescr,"Label");
 			GUI.EndScrollView();
 
-			string reward="Reward\n\nMoney:1000\nExperience:233";
+			string reward="Reward\n\nMoney:"+questReader.getReward().money+"\nExperience:"+questReader.getReward().exp;
 			GUI.TextField (ResizeGUI (new Rect (65, 315, 170, 80)), reward);
 			
 			//Accept button
