@@ -12,14 +12,19 @@ public class EnemyHealth : MonoBehaviour
 		healthRatio = 1f;
 	}
 
-	void Update()
-	{
-	healthRatio = health / (float)fullHealth;
-	}
-
 	public float getHealthRatio()
 	{
 		return healthRatio;
+	}
+
+	public void takeDamage(int dmg)
+	{
+		health -= dmg;
+
+		if (health <= 0)
+			Destroy (this.transform.parent.gameObject);
+
+		healthRatio = health / (float)fullHealth;
 	}
 }
 

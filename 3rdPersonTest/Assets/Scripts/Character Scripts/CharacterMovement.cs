@@ -33,10 +33,6 @@ public class CharacterMovement : MonoBehaviour {
 		//transform.LookAt(transform.position + CameraDir);
 		transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z); 
 	}
-
-	void OnTriggerEnter(Collider other) {
-		if(other.tag=="Enemy")
-		Destroy(other.transform.parent.gameObject);
-	}
+	
 }
 
