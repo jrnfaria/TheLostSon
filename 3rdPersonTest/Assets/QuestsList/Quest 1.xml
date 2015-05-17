@@ -19,7 +19,7 @@ Let's start. Kill 10 pigs for now. They are easy to kill, so I think that it's a
 Good luck!!!
 	</description>
 	
-	<objective type="pigs">
+	<objective type="MonsterPig">
 		<quantity>5</quantity>
 	</objective>
 	

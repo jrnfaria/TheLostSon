@@ -61,4 +61,8 @@ public class QuestViewer : MonoBehaviour {
 		
 		return new Rect(rectX,rectY,rectWidth,rectHeight);
 	}
+
+	public void initQuest(){
+		
+	}
 }

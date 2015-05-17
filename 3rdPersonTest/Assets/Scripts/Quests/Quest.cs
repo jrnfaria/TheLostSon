@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Quest : MonoBehaviour {
+public abstract class Quest : MonoBehaviour {
 
-	QuestReader questReader;
-	private string monster;
+	protected QuestReader questReader;
+	protected string monster;
 
 	// Use this for initialization
 	void Start () {
-		questReader = gameObject.GetComponent<QuestReader> ();
 	}
 	
 	// Update is called once per frame
@@ -16,7 +15,8 @@ public class Quest : MonoBehaviour {
 	
 	}
 
-	public void startQuest(){
-		monster=questReader.
+	public virtual void startQuest(){
+		questReader = gameObject.GetComponent<QuestReader> ();
+		monster = questReader.getObjective ().type;
 	}
 }
