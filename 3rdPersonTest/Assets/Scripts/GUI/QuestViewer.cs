@@ -135,7 +135,7 @@ public class QuestViewer : MonoBehaviour {
 		//Accept button
 		if (GUI.Button (ResizeGUI (new Rect (65, 410, 80, 20)), "Complete")) {
 			questRange.setDisplayedGUI (false);
-			Debug.Log ("Give reward");
+			GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>().addExp(questReader.getReward().exp);
 		}
 	}
 
