@@ -43,6 +43,10 @@ public class QuestReader : MonoBehaviour {
 		description = xml.container.description;
 		Debug.Log ("description = "+description);
 
+		//get quest type
+		questType = xml.container.type;
+		Debug.Log ("questType = "+questType);
+
 		//get objectives
 		obj = xml.container.obj;
 		Debug.Log ("Objective type = "+obj.type+"/"+obj.quantity);

@@ -55,7 +55,7 @@ public class CharacterHealth : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		Debug.Log (other.tag);
+		//Debug.Log (other.tag);
 		if (other.tag == "Enemy") {
 			other.GetComponent<EnemyHealth>().takeDamage(10);
 		}

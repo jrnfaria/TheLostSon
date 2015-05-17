@@ -15,6 +15,8 @@ public class KillQuest : Quest {
 	}
 
 	public override void startQuest(){
+		questReader = GameObject.FindGameObjectWithTag("Range").GetComponent<QuestReader> ();
+		monster = questReader.getObjective ().type;
 		number = questReader.getObjective ().quantity;
 	}
 
@@ -28,5 +30,9 @@ public class KillQuest : Quest {
 
 	public int getKilledNum(){
 		return questReader.getObjective ().quantity-number;
+	}
+
+	public int getTotalNum(){
+		return questReader.getObjective ().quantity;
 	}
 }

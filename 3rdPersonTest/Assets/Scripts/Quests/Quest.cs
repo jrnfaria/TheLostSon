@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Quest : MonoBehaviour {
+public class Quest : MonoBehaviour {
 
 	protected QuestReader questReader;
 	protected string monster;
@@ -15,8 +15,5 @@ public abstract class Quest : MonoBehaviour {
 	
 	}
 
-	public virtual void startQuest(){
-		questReader = gameObject.GetComponent<QuestReader> ();
-		monster = questReader.getObjective ().type;
-	}
+	public virtual void startQuest(){}
 }

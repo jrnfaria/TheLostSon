@@ -21,8 +21,13 @@ public class EnemyHealth : MonoBehaviour
 	{
 		health -= dmg;
 
-		if (health <= 0)
+		if (health <= 0) {
 			Destroy (this.transform.parent.gameObject);
+			KillQuest quest = GameObject.FindGameObjectWithTag("Character").GetComponent<KillQuest>();
+			if(quest.getNumber() !=0){
+				quest.setNumber(quest.getNumber()-1);
+			}
+		}
 
 		healthRatio = health / (float)fullHealth;
 	}
