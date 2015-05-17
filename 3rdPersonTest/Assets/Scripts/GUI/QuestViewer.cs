@@ -31,7 +31,7 @@ public class QuestViewer : MonoBehaviour {
 			GUI.TextField (ResizeGUI (new Rect (0, 0, 160, size)), questDescr,"Label");
 			GUI.EndScrollView();
 
-			string reward="Reward\nMoney:1000\nExperience:233";
+			string reward="Reward\n\nMoney:1000\nExperience:233";
 			GUI.TextField (ResizeGUI (new Rect (65, 315, 170, 80)), reward);
 			
 			//Accept button

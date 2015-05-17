@@ -2,12 +2,12 @@
 <quest>
 	<num>1</num>
 	<startconditions>
-		<level></level>
+		<level>1</level>
 		<previousquest></previousquest>
-		</startconditions>
 	</startconditions>
-	<giver></giver>
-	<description></description>
+	<description>
+		Hi,
+	</description>
 	<objective></objective>
     <reward></reward>
 </quest>
