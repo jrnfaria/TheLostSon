@@ -9,7 +9,7 @@ public class KillQuest : Quest {
 	void Start () {
 		questReader = GameObject.FindGameObjectWithTag("Range").GetComponent<QuestReader> ();
 		monster = "";
-		number = 0;
+		number = -1;
 	}
 	
 	// Update is called once per frame

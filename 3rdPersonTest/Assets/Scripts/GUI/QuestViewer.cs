@@ -7,13 +7,14 @@ public class QuestViewer : MonoBehaviour {
 	private QuestReader questReader;
 	private Vector2 scrollPosition = Vector2.zero;
 	private bool showInfoQuestMenu =false;
+	private bool questWasAccepted =false;
 	private Quest quest;
 
 	// Use this for initialization
 	void Start () {
 		questRange = gameObject.GetComponent<QuestRange> ();
 		questReader = gameObject.GetComponent<QuestReader> ();
-		quest = null;
+		quest = GameObject.FindGameObjectWithTag("Character").GetComponent<KillQuest>();
 	}
 	
 	// Update is called once per frame
@@ -26,7 +27,7 @@ public class QuestViewer : MonoBehaviour {
 	void OnGUI()
 	{
 		if (questRange.isDisplayedGUI()) {
-			if(quest != null && ((KillQuest)quest).getKilledNum ()==((KillQuest)quest).getTotalNum()){
+			if(questWasAccepted){
 				createEndQuestGUI();
 			}else{
 				createStartQuestGUI();
@@ -75,6 +76,7 @@ public class QuestViewer : MonoBehaviour {
 		//Accept button
 		if (GUI.Button (ResizeGUI (new Rect (65, 410, 80, 20)), "Accept")) {
 			questRange.setDisplayedGUI(false);
+			questWasAccepted=true;
 			initQuest();
 		}
 		

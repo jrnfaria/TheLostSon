@@ -14,10 +14,10 @@ public class QuestRange : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey (KeyCode.F) && isInside) {
 			displayedGUI = true;
-		} else if (!isInside) {
+		}else if (!isInside) {
 			displayedGUI=false;
 		}
-		Debug.Log("displayedGUI = "+displayedGUI+"/ isInside = "+isInside);
+		//Debug.Log("displayedGUI = "+displayedGUI+"/ isInside = "+isInside);
 	}
 
 	void OnTriggerEnter(Collider other){
