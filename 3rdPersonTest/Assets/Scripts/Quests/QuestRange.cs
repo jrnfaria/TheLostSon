@@ -17,6 +17,7 @@ public class QuestRange : MonoBehaviour {
 		} else if (!isInside) {
 			displayedGUI=false;
 		}
+		Debug.Log("displayedGUI = "+displayedGUI+"/ isInside = "+isInside);
 	}
 
 	void OnTriggerEnter(Collider other){

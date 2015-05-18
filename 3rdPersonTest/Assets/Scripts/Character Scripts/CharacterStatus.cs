@@ -88,7 +88,7 @@ public class CharacterStatus : MonoBehaviour {
 
 	public void addExp(int xp){
 		exp += xp;
-		if (exp >= maxExp) {
+		while(exp >= maxExp){
 			lvl++;
 			lvlText.text = "Lvl:" + lvl;
 			exp -= 100;
