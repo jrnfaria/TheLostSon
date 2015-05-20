@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -14,6 +14,9 @@ public class CharacterStatus : MonoBehaviour {
 	private int maxExp;
 
 	private int lvl;
+
+	private int money;
+
 	
 	public Slider healthSlider;
 	public Slider staminaSlider;
@@ -23,6 +26,7 @@ public class CharacterStatus : MonoBehaviour {
 	public Text lvlText;
 	public Text HPTextInfo;
 	public Text SPTextInfo;
+	public Text moneyText;
 
 	
 	
@@ -31,7 +35,8 @@ public class CharacterStatus : MonoBehaviour {
 	void Start () {
 		health = 100;
 		fullHealth = 100;
-		
+
+		money = 0;
 		stamina=100;
 		lvl = 1;
 		exp = 0;
@@ -55,6 +60,8 @@ public class CharacterStatus : MonoBehaviour {
 
 		HPTextInfo.text = health + "/" + fullHealth;
 		SPTextInfo.text = stamina + "/" + maxStamina;
+
+		moneyText.text = "Money:" + money;
 	}
 	
 	// Update is called once per frame
@@ -65,6 +72,7 @@ public class CharacterStatus : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.C)) {
 			takeDamage(10);
 			spendStamina(10);
+			addMoney(100);
 		}
 	}
 	
@@ -84,6 +92,12 @@ public class CharacterStatus : MonoBehaviour {
 		} else {
 			stamina=0;
 		}
+	}
+
+	public void addMoney(int mn)
+	{
+		money += mn;
+		moneyText.text = "Money:" + money;
 	}
 
 	public void addExp(int xp){
