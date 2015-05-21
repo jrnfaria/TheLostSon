@@ -19,5 +19,14 @@ public class MinimapController : MonoBehaviour {
 			miniCamera.SetActive(visible);
 		}
 
+		else if(Input.GetKeyUp(KeyCode.Z))
+		{
+			miniCamera.GetComponent<Camera>().orthographicSize+=20;
+		}
+
+		else if(Input.GetKeyUp(KeyCode.X))
+		{
+			miniCamera.GetComponent<Camera>().orthographicSize-=20;
+		}
 	}
 }
