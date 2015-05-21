@@ -1,20 +1,37 @@
-﻿Shader "TextureMask"
+﻿Shader "Transparent/Cutout/Unlit" {
+Properties
 {
-   Properties
-   {
-      _Mask ("Culling Mask", 2D) = "white" {}
-   }
-   SubShader
-   {
-      Tags {"Queue" = "Background"}
-      Blend SrcAlpha OneMinusSrcAlpha
-      Lighting Off
-      ZWrite On
-      ZTest Always
-      Alphatest LEqual 0
-      Pass
-      {
-         SetTexture [_Mask] {combine texture}
-      }
-   }
+    _Color ("Main Color", Color) = (1,1,1,1)
+    _MainTex ("Texture", 2D) = "white" {}
+    _Cutoff ("Alpha cutoff", Range(0,1)) = 0.5
+}
+ 
+SubShader
+{
+    Cull Off
+    Tags
+    {
+        "Queue" = "Transparent"
+        "IgnoreProjector" = "True"
+        "RenderType" = "TransparentCutoff"
+    }
+    Pass
+    {
+        Blend One One
+        Alphatest Greater [_Cutoff]
+        AlphaToMask True
+        ColorMask RGB
+   
+ 
+        SetTexture [_MainTex]
+        {
+            Combine texture, texture
+        }
+        SetTexture [_MainTex] {
+            constantColor [_Color]
+            Combine previous * constant, previous * constant
+        }  
+    }
+}
+ 
 }
