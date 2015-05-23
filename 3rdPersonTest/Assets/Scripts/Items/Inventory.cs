@@ -15,8 +15,15 @@ public class Inventory : MonoBehaviour {
 	private Item curItem=null;
 	private int prevIndex;
 
+	//resize
+	private float virtualWidth = 1920.0f;
+	private float virtualHeight = 1080.0f;
+	Matrix4x4 matrix;
+	
+
 	// Use this for initialization
 	void Start () {
+		matrix = Matrix4x4.TRS (Vector3.zero, Quaternion.identity,new  Vector3(Screen.width/virtualWidth, Screen.height/virtualHeight, 1.0f));
 		for (int i=0; i<(slotsX * slotsY); i++) {
 			//inventory.Add (new Item());
 			slotItems.Add (new Item());
@@ -42,6 +49,7 @@ public class Inventory : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.I)) {
 			show=!show;
+
 		}
 	}
 
@@ -51,11 +59,13 @@ public class Inventory : MonoBehaviour {
 		Event e = Event.current;
 
 		if (show) {
+			GUI.matrix = matrix;
+			GUI.Box (new Rect(750,350,1100,700),"inventory");
 			for (int x=0;x<slotsX;x++)
 			{
 				for (int y=0;y<slotsY;y++)
 				{
-					Rect slotRect = new Rect(65 + x * 60,30+y*60,50,50);
+					Rect slotRect = new Rect(800 + x * 60,400+y*60,50,50);
 					GUI.Box (slotRect,slotItems[i].itemName);
 				
 					if(slotRect.Contains(e.mousePosition))
