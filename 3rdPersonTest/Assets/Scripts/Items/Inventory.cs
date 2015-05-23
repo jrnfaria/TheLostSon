@@ -60,42 +60,56 @@ public class Inventory : MonoBehaviour {
 
 		if (show) {
 			GUI.matrix = matrix;
-			GUI.Box (new Rect(750,350,1100,700),"inventory");
+			GUI.Box (new Rect(650,250,500,500),"inventory");
 			for (int x=0;x<slotsX;x++)
 			{
 				for (int y=0;y<slotsY;y++)
 				{
-					Rect slotRect = new Rect(800 + x * 60,400+y*60,50,50);
-					GUI.Box (slotRect,slotItems[i].itemName);
-				
-					if(slotRect.Contains(e.mousePosition))
-					{
-						currentToolTip = slotItems[i].itemDescription;
+					Rect slotRect = new Rect(700 + x * 80,300+y*80,70,70);
+					GUI.Box (slotRect,slotItems[i].image);
 
-						if(e.type == EventType.MouseDrag && slotItems[i].itemName !=null && slotItems[i].itemName!="")
+					if(slotRect.Contains(e.mousePosition)&&!dragging && slotItems[i].itemName !=null && slotItems[i].itemName!="")
+					{
+						currentToolTip = slotItems[i].itemName+"\n"+slotItems[i].itemDescription;
+
+						if(e.type == EventType.MouseDrag && curItem==null)
 						{
 							dragging=true;
 							prevIndex = i;
 							curItem = slotItems[i];
 							slotItems[i]=new Item();
 						}
+
+						//use item
+						else if(e.type==EventType.mouseUp)
+							slotItems[i]=new Item();
 					}
+					else
+					{
+						currentToolTip = "";
+					}
+				
 
 					if(dragging)
 					{
-						GUI.Label (new Rect(e.mousePosition.x,e.mousePosition.y,100,100),curItem.itemName);
+						GUI.DrawTexture(new Rect(e.mousePosition.x,e.mousePosition.y,70,70),curItem.image);
 					
 						if(e.type == EventType.MouseUp)
 						{
+
 							if(slotRect.Contains (e.mousePosition))
 							{
 								if(slotItems[i].itemName != null && slotItems[i].itemName != "")
 								{
-
+									slotItems[prevIndex]=slotItems[i];
 								}
+
 								slotItems[i]=curItem;
+								curItem=null;
 								dragging=false;
 							}
+
+
 						}
 					}
 					//shows item description

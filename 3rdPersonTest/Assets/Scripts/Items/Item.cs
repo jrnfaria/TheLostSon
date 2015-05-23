@@ -13,6 +13,7 @@ public class Item{
 		Partner
 	}
 	public string itemName;
+	public Texture image;
 	public string itemDescription;
 	public int itemID;
 	public int itemAmount;
