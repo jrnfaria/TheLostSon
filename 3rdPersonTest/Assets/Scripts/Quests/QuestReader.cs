@@ -31,29 +31,29 @@ public class QuestReader : MonoBehaviour {
 		
 		//get QuestId
 		questId = xml.container.id;
-		Debug.Log ("questId = " + questId);
+		//Debug.Log ("questId = " + questId);
 		
 		//get Start Conditions
 		for (int i=0; i< xml.container.startconditions.Count; i++) {
 			startconditions.Add (xml.container.startconditions [i]);
-			Debug.Log ("startconditions[" + i + "] = " + startconditions [i].type + "/" + startconditions [i].questId);
+			//Debug.Log ("startconditions[" + i + "] = " + startconditions [i].type + "/" + startconditions [i].questId);
 		}
 		
 		//get description
 		description = xml.container.description;
-		Debug.Log ("description = "+description);
+		//Debug.Log ("description = "+description);
 
 		//get quest type
 		questType = xml.container.type;
-		Debug.Log ("questType = "+questType);
+		//Debug.Log ("questType = "+questType);
 
 		//get objectives
 		obj = xml.container.obj;
-		Debug.Log ("Objective type = "+obj.type+"/"+obj.quantity);
+		//Debug.Log ("Objective type = "+obj.type+"/"+obj.quantity);
 
 		//get money
 		rew = xml.container.rew;
-		Debug.Log ("money = "+rew.money +"/exp = "+rew.exp);
+		//Debug.Log ("money = "+rew.money +"/exp = "+rew.exp);
 
 	}
 	

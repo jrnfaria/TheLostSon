@@ -10,8 +10,15 @@ public class QuestViewer : MonoBehaviour {
 	private bool questWasAccepted =false;
 	private Quest quest;
 
+	//resize
+	private float virtualWidth = 1920.0f;
+	private float virtualHeight = 1080.0f;
+	Matrix4x4 matrix;
+
 	// Use this for initialization
 	void Start () {
+		matrix = Matrix4x4.TRS (Vector3.zero, Quaternion.identity,new  Vector3(Screen.width/virtualWidth, Screen.height/virtualHeight, 1.0f));
+
 		questRange = gameObject.GetComponent<QuestRange> ();
 		questReader = gameObject.GetComponent<QuestReader> ();
 		quest = GameObject.FindGameObjectWithTag("Character").GetComponent<KillQuest>();
@@ -37,7 +44,7 @@ public class QuestViewer : MonoBehaviour {
 		}
 	}
 	
-	Rect ResizeGUI(Rect _rect)
+	/*Rect ResizeGUI(Rect _rect)
 	{
 		float FilScreenWidth = _rect.width / 800;
 		float rectWidth = FilScreenWidth * Screen.width;
@@ -47,7 +54,7 @@ public class QuestViewer : MonoBehaviour {
 		float rectY = (_rect.y / 600) * Screen.height;
 		
 		return new Rect(rectX,rectY,rectWidth,rectHeight);
-	}
+	}*/
 
 	public void initQuest(){
 		if (questReader.getQuestType () == "kill") {
@@ -57,38 +64,36 @@ public class QuestViewer : MonoBehaviour {
 	}
 
 	public void createStartQuestGUI(){
+		GUI.matrix = matrix;
 		// Make a background box
-		GUI.Box (ResizeGUI (new Rect (50, 50, 200, 400)), "\nQuest "+questReader.getQuestId());
+		GUI.Box (new Rect (100, 200, 400, 600), "\nQuest "+questReader.getQuestId());
 		
 		//Quest Description
 		string questDescr =questReader.getDescription();
-		int size = (int)((questDescr.Length*200/566)+0.5);
-		if(size<200){
-			size=200;
-		}
-		scrollPosition = GUI.BeginScrollView (ResizeGUI (new Rect(65, 100, 170, 200)), scrollPosition, ResizeGUI (new Rect(0, 0, 160, size)));
-		GUI.TextField (ResizeGUI (new Rect (0, 0, 160, size)), questDescr,"Label");
+		scrollPosition = GUI.BeginScrollView (new Rect(130, 270, 340, 300), scrollPosition, new Rect(0, 0, 320, 310));
+		GUI.TextField (new Rect (0, 0, 320, 310), questDescr,"Label");
 		GUI.EndScrollView();
 		
 		string reward="Reward\n\nMoney:"+questReader.getReward().money+"\nExperience:"+questReader.getReward().exp;
-		GUI.TextField (ResizeGUI (new Rect (65, 315, 170, 80)), reward);
+		GUI.TextField (new Rect (130, 600, 340, 100), reward);
 		
 		//Accept button
-		if (GUI.Button (ResizeGUI (new Rect (65, 410, 80, 20)), "Accept")) {
+		if (GUI.Button (new Rect (130, 720, 160, 40), "Accept")) {
 			questRange.setDisplayedGUI(false);
 			questWasAccepted=true;
 			initQuest();
 		}
 		
 		//Reject button
-		if (GUI.Button (ResizeGUI (new Rect (155, 410, 80, 20)), "Reject")) {
+		if (GUI.Button (new Rect (310, 720, 160, 40), "Reject")) {
 			questRange.setDisplayedGUI(false);
 		}
 	}
 
 	public void createInfoQuestGUI(){
+		GUI.matrix = matrix;
 		// Make a background box
-		GUI.Box (ResizeGUI (new Rect (50, 50, 200, 400)), "\nQuest "+questReader.getQuestId());
+		GUI.Box (new Rect (50, 50, 200, 400), "\nQuest "+questReader.getQuestId());
 		
 		//Quest Description
 		string questDescr =questReader.getDescription();
@@ -96,26 +101,27 @@ public class QuestViewer : MonoBehaviour {
 		if(size<200){
 			size=200;
 		}
-		scrollPosition = GUI.BeginScrollView (ResizeGUI (new Rect(65, 100, 170, 200)), scrollPosition, ResizeGUI (new Rect(0, 0, 160, size)));
-		GUI.TextField (ResizeGUI (new Rect (0, 0, 160, size)), questDescr,"Label");
+		scrollPosition = GUI.BeginScrollView (new Rect(65, 100, 170, 200), scrollPosition, new Rect(0, 0, 160, size));
+		GUI.TextField (new Rect (0, 0, 160, size), questDescr,"Label");
 		GUI.EndScrollView();
 
 		if (questReader.getQuestType () == "kill") {
-			GUI.TextField (ResizeGUI (new Rect (65, 285, 170, 25)), "Enemies missing : " + ((KillQuest)quest).getKilledNum ()+"/"+((KillQuest)quest).getTotalNum());
+			GUI.TextField (new Rect (65, 285, 170, 25), "Enemies missing : " + ((KillQuest)quest).getKilledNum ()+"/"+((KillQuest)quest).getTotalNum());
 		}
 
 		string reward="Reward\n\nMoney:"+questReader.getReward().money+"\nExperience:"+questReader.getReward().exp;
-		GUI.TextField (ResizeGUI (new Rect (65, 315, 170, 80)), reward);
+		GUI.TextField (new Rect (65, 315, 170, 80), reward);
 		
 		//Cancel button
-		if (GUI.Button (ResizeGUI (new Rect (155, 410, 80, 20)), "Cancel")) {
+		if (GUI.Button (new Rect (155, 410, 80, 20), "Cancel")) {
 			showInfoQuestMenu=false;
 		}
 	}
 	
 	public void createEndQuestGUI(){
+		GUI.matrix = matrix;
 		// Make a background box
-		GUI.Box (ResizeGUI (new Rect (50, 50, 200, 400)), "\nQuest "+questReader.getQuestId());
+		GUI.Box (new Rect (50, 50, 200, 400), "\nQuest "+questReader.getQuestId());
 		
 		//Quest Description
 		string questDescr =questReader.getDescription();
@@ -123,19 +129,19 @@ public class QuestViewer : MonoBehaviour {
 		if(size<200){
 			size=200;
 		}
-		scrollPosition = GUI.BeginScrollView (ResizeGUI (new Rect(65, 100, 170, 200)), scrollPosition, ResizeGUI (new Rect(0, 0, 160, size)));
-		GUI.TextField (ResizeGUI (new Rect (0, 0, 160, size)), questDescr,"Label");
+		scrollPosition = GUI.BeginScrollView (new Rect(65, 100, 170, 200), scrollPosition, new Rect(0, 0, 160, size));
+		GUI.TextField (new Rect (0, 0, 160, size), questDescr,"Label");
 		GUI.EndScrollView();
 		
 		if (questReader.getQuestType () == "kill") {
-			GUI.TextField (ResizeGUI (new Rect (65, 285, 170, 25)), "Enemies missing : " + ((KillQuest)quest).getKilledNum ()+"/"+((KillQuest)quest).getTotalNum());
+			GUI.TextField (new Rect (65, 285, 170, 25), "Enemies missing : " + ((KillQuest)quest).getKilledNum ()+"/"+((KillQuest)quest).getTotalNum());
 		}
 		
 		string reward="Reward\n\nMoney:"+questReader.getReward().money+"\nExperience:"+questReader.getReward().exp;
-		GUI.TextField (ResizeGUI (new Rect (65, 315, 170, 80)), reward);
+		GUI.TextField (new Rect (65, 315, 170, 80), reward);
 		
 		//Accept button
-		if (GUI.Button (ResizeGUI (new Rect (65, 410, 80, 20)), "Complete")) {
+		if (GUI.Button (new Rect (65, 410, 80, 20), "Complete")) {
 			questRange.setDisplayedGUI (false);
 			GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>().addExp(questReader.getReward().exp);
 		}
