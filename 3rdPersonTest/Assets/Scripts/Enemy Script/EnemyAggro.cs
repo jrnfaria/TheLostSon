@@ -4,74 +4,69 @@ using System.Collections;
 public class EnemyAggro : MonoBehaviour {
 
 	private GameObject hero;
-	public float range;
-	public float speed;
+	private NavMeshAgent nav; 
+
 	public bool aggressive;
 
+	public int heroDetectionRange;
+	public int patrolRange;
 
-	//terrain limit
-	/*private float limitSupX;
-	private float limitInfX;
-	private float limitSupZ;
-	private float limitInfZ;*/
-
-	//random movement
 	private Vector3 patrolPosition;
-	private bool inPatrolPosition;
+	private bool inDestiny;
+	private Vector3 initialPosition;
+
+	private bool followingHero;
 
 	void Start () {
 
-		hero=GameObject.FindGameObjectWithTag("Character");
-		inPatrolPosition = true;
-		/*limitSupX = transform.parent.position.x + GetComponentInParent<EnemySpawner>().range;
-		limitInfX = transform.parent.position.x - GetComponentInParent<EnemySpawner>().range;
-		limitSupZ = transform.parent.position.z + GetComponentInParent<EnemySpawner>().range;
-		limitInfZ = transform.parent.position.z - GetComponentInParent<EnemySpawner>().range;*/
+		hero = GameObject.FindGameObjectWithTag ("Character");
+		nav = GetComponent<NavMeshAgent>();
+
+		initialPosition = this.transform.parent.transform.position;
+
+		patrolPosition=new Vector3();
+		inDestiny = true;
+		followingHero = false;
 	}
 
 
 
 	// Update is called once per frame
 	void Update () {
-		float dist = Mathf.Abs (Vector3.Distance(hero.transform.position,transform.position));
-		float step = speed * Time.deltaTime;
-		if (aggressive & (dist <= range) ) {
-			//transform.LookAt(hero.transform.position);
-			//move towards the player
-			transform.rotation = Quaternion.Slerp(transform.rotation,
-			                                        Quaternion.LookRotation(hero.transform.position - transform.position), /*rotation*/speed*Time.deltaTime);
-			transform.position += transform.forward * speed * Time.deltaTime;
-
-			Vector3.MoveTowards(transform.position,hero.transform.position,step);
-		}
-		else if ((dist > range) || !aggressive)
-		{
-			if(inPatrolPosition)
+		if (Vector3.Distance (hero.transform.position, nav.transform.position) <= heroDetectionRange && aggressive &&!followingHero) {
+			ChaseHero();
+		} else  {
+			if (inDestiny)
 			{
-			Vector3 Temp = Random.onUnitSphere;
-			float TempDistance = Random.Range(0, 10);
-			Temp = Temp * TempDistance;
-			Vector3 FinalTemp = new Vector3(Temp.x, 0, Temp.z);
-
-			patrolPosition=transform.position + FinalTemp;
-			inPatrolPosition=false;
-
-
-
-				//Debug.Log (	patrolPosition);
+				CalculatePatrolPoint();
 			}
-			else 
+			else
 			{
-				transform.position=Vector3.MoveTowards(transform.position,patrolPosition,2*Time.deltaTime);
-				transform.rotation = Quaternion.Slerp(transform.rotation,
-				                                      Quaternion.LookRotation(patrolPosition - transform.position), /*rotation*/speed*Time.deltaTime);
+				nav.destination=patrolPosition;
 
-				if(Vector3.Distance(transform.position,patrolPosition)==0)
-					inPatrolPosition=true;
+				if(nav.remainingDistance==0)
+					inDestiny=true;
 			}
+			followingHero=false;
 		}
 
+	}
 
-	
+	void ChaseHero()
+	{
+		nav.destination = hero.transform.position;
+		followingHero = true;
+	}
+
+	void CalculatePatrolPoint()
+	{
+		Vector3 randomDirection = Random.insideUnitSphere * patrolRange;
+		
+		randomDirection += initialPosition;
+		NavMeshHit hit;
+		NavMesh.SamplePosition(randomDirection, out hit, patrolRange, 1);
+		patrolPosition = hit.position;
+		
+		inDestiny=false;
 	}
 }
