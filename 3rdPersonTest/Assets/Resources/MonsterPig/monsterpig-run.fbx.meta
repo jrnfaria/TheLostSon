@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: bdb5804e61a3e0c4a91909430bfe2da4
+timeCreated: 1433357510
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: backfoot.L
+    100004: backfoot.L_end
+    100006: backfoot.R
+    100008: backfoot.R_end
+    100010: backleg.L
+    100012: backleg.R
+    100014: Camera
+    100016: Cone.001
+    100018: Cube
+    100020: foot.L
+    100022: foot.L_end
+    100024: foot.R
+    100026: foot.R_end
+    100028: head
+    100030: head_end
+    100032: Lamp
+    100034: leg.L
+    100036: leg.R
+    100038: //RootNode
+    100040: Sphere
+    100042: torso
+    100044: torso.2
+    100046: upperbackleg.L
+    100048: upperbackleg.R
+    100050: upperleg.L
+    100052: upperleg.R
+    400000: Armature
+    400002: backfoot.L
+    400004: backfoot.L_end
+    400006: backfoot.R
+    400008: backfoot.R_end
+    400010: backleg.L
+    400012: backleg.R
+    400014: Camera
+    400016: Cone.001
+    400018: Cube
+    400020: foot.L
+    400022: foot.L_end
+    400024: foot.R
+    400026: foot.R_end
+    400028: head
+    400030: head_end
+    400032: Lamp
+    400034: leg.L
+    400036: leg.R
+    400038: //RootNode
+    400040: Sphere
+    400042: torso
+    400044: torso.2
+    400046: upperbackleg.L
+    400048: upperbackleg.R
+    400050: upperleg.L
+    400052: upperleg.R
+    4300000: Sphere
+    4300002: Cube
+    4300004: Cone.001
+    7400000: Armature|ArmatureAction
+    9500000: //RootNode
+    13700000: Cone.001
+    13700002: Cube
+    13700004: Sphere
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
