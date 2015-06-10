@@ -9,10 +9,15 @@ public class CharacterMovement : MonoBehaviour {
 
 	private CharacterController controller ;
 	private Vector3 moveDirection = Vector3.zero;
+	private Animator anim;
+
 
 	
 	void Start () {
 		controller = GetComponent<CharacterController> ();
+		anim= GetComponent<Animator> ();
+
+
 	}
 
 	void Update() {
@@ -27,6 +32,12 @@ public class CharacterMovement : MonoBehaviour {
 			
 		}
 		moveDirection.y -= gravity * Time.deltaTime;
+
+		/*if (moveDirection != Vector3.zero)
+			anim.SetBool ("walking", true);
+		else
+			anim.SetBool ("walking", false);*/
+
 		controller.Move(moveDirection * Time.deltaTime);
 
 		//Vector3 CameraDir = new Vector3 (Camera.main.transform.position.x,0,Camera.main.transform.position.z);

@@ -5,6 +5,7 @@ public class EnemyAggro : MonoBehaviour {
 
 	private GameObject hero;
 	private NavMeshAgent nav; 
+	private Animator anim;
 
 	public bool aggressive;
 
@@ -21,6 +22,7 @@ public class EnemyAggro : MonoBehaviour {
 
 		hero = GameObject.FindGameObjectWithTag ("Character");
 		nav = GetComponent<NavMeshAgent>();
+		anim=GetComponent<Animator>();
 
 		initialPosition = this.transform.parent.transform.position;
 
@@ -33,7 +35,7 @@ public class EnemyAggro : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Vector3.Distance (hero.transform.position, nav.transform.position) <= heroDetectionRange && aggressive &&!followingHero) {
+		if (Vector3.Distance (hero.transform.position, nav.transform.position) <= heroDetectionRange && aggressive ) {
 			ChaseHero();
 		} else  {
 			if (inDestiny)
@@ -48,6 +50,8 @@ public class EnemyAggro : MonoBehaviour {
 					inDestiny=true;
 			}
 			followingHero=false;
+			anim.SetBool ("chasing",false);
+			nav.speed=4;
 		}
 
 	}
@@ -56,6 +60,7 @@ public class EnemyAggro : MonoBehaviour {
 	{
 		nav.destination = hero.transform.position;
 		followingHero = true;
+		anim.SetBool ("chasing",true);
 	}
 
 	void CalculatePatrolPoint()
@@ -68,5 +73,6 @@ public class EnemyAggro : MonoBehaviour {
 		patrolPosition = hit.position;
 		
 		inDestiny=false;
+		nav.speed=10;
 	}
 }

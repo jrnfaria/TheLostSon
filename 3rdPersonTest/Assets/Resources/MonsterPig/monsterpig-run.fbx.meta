@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: bdb5804e61a3e0c4a91909430bfe2da4
-timeCreated: 1433357510
+guid: 5107fe0e46c92ee4881816edd1be55d8
+timeCreated: 1433949651
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -62,7 +62,7 @@ ModelImporter:
     4300000: Sphere
     4300002: Cube
     4300004: Cone.001
-    7400000: Armature|ArmatureAction
+    7400000: run
     9500000: //RootNode
     13700000: Cone.001
     13700002: Cube
@@ -82,7 +82,87 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/torso.2
+        weight: 1
+      - path: Armature/torso.2/torso
+        weight: 1
+      - path: Armature/torso.2/torso/head
+        weight: 1
+      - path: Armature/torso.2/torso/head/head_end
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.L
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.L/leg.L
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.L/leg.L/foot.L
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.L/leg.L/foot.L/foot.L_end
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.R
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.R/leg.R
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.R/leg.R/foot.R
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.R/leg.R/foot.R/foot.R_end
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.L
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.L/backleg.L
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.L/backleg.L/backfoot.L
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.L/backleg.L/backfoot.L/backfoot.L_end
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.R
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.R/backleg.R
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.R/backleg.R/backfoot.R
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.R/backleg.R/backfoot.R/backfoot.R_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cone.001
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Lamp
+        weight: 1
+      - path: Sphere
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

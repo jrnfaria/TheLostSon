@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 05f8730f538b85f449effcf594c0985a
-timeCreated: 1433357509
+guid: 38b91760a003ca34185c4566a1b5efc0
+timeCreated: 1433949650
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -62,7 +62,7 @@ ModelImporter:
     4300000: Sphere
     4300002: Cube
     4300004: Cone.001
-    7400000: Armature|ArmatureAction.002
+    7400000: walk
     9500000: //RootNode
     13700000: Cone.001
     13700002: Cube
@@ -84,7 +84,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|ArmatureAction.002
+      name: walk
       takeName: Armature|ArmatureAction.002
       firstFrame: 0
       lastFrame: 41
