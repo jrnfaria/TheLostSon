@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: f7365ffc90aa42a4bb7f450ae0d8b890
-timeCreated: 1433761803
+guid: 118d604e1980a2845a2f71c453ad59a9
+timeCreated: 1434045216
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -225,24 +225,7 @@ ModelImporter:
     4300022: Torus
     4300024: bracelete.003
     4300026: bracelete.002
-    7400000: Lamp|CubeAction
-    7400002: Camera|CubeAction
-    7400004: esqueleto|CubeAction
-    7400006: esqueleto|esqueletoAction
-    7400008: corpo|CubeAction
-    7400010: camisola|CubeAction
-    7400012: bracelete.001|CubeAction
-    7400014: bracelete|CubeAction
-    7400016: "cal\xE7as|CubeAction"
-    7400018: cinto|CubeAction
-    7400020: Sphere|CubeAction
-    7400022: chapeu|CubeAction
-    7400024: corpo.001|CubeAction
-    7400026: Cylinder|CubeAction
-    7400028: Torus|CubeAction
-    7400030: bracelete.003|CubeAction
-    7400032: bracelete.002|CubeAction
-    7400034: Cube|CubeAction
+    7400000: esqueleto|esqueletoAction.001
     9500000: //RootNode
     13700000: bracelete
     13700002: bracelete.001

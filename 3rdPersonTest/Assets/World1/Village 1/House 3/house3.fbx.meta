@@ -1,36 +1,15 @@
 fileFormatVersion: 2
-guid: 021d2051598db6b40968ff0640223ab5
-timeCreated: 1433145717
+guid: 60a365177de84e64faa3cb353e5fd62f
+timeCreated: 1434033515
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Camera
-    100002: Cube.003
-    100004: Cube.004
-    100006: Cube.005
-    100008: Cube.006
-    100010: //RootNode
-    100012: Sun
-    400000: Camera
-    400002: Cube.003
-    400004: Cube.004
-    400006: Cube.005
-    400008: Cube.006
-    400010: //RootNode
-    400012: Sun
-    2300000: Cube.003
-    2300002: Cube.004
-    2300004: Cube.005
-    2300006: Cube.006
-    3300000: Cube.003
-    3300002: Cube.004
-    3300004: Cube.005
-    3300006: Cube.006
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Cube.006
-    4300002: Cube.005
-    4300004: Cube.004
-    4300006: Cube.003
   materials:
     importMaterials: 1
     materialName: 0
