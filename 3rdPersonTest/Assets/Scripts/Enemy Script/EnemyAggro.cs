@@ -9,6 +9,7 @@ public class EnemyAggro : MonoBehaviour {
 
 	public bool aggressive;
 
+
 	public int heroDetectionRange;
 	public int patrolRange;
 
@@ -17,43 +18,46 @@ public class EnemyAggro : MonoBehaviour {
 	private Vector3 initialPosition;
 
 	private bool followingHero;
+	private bool attacking;
 
 	void Start () {
 
 		hero = GameObject.FindGameObjectWithTag ("Character");
 		nav = GetComponent<NavMeshAgent>();
 		anim=GetComponent<Animator>();
+		attacking = false;
 
 		initialPosition = this.transform.parent.transform.position;
 
 		patrolPosition=new Vector3();
 		inDestiny = true;
 		followingHero = false;
+		attacking = false;
 	}
 
 
 
 	// Update is called once per frame
 	void Update () {
-		if (Vector3.Distance (hero.transform.position, nav.transform.position) <= heroDetectionRange && aggressive ) {
-			ChaseHero();
-		} else  {
-			if (inDestiny)
-			{
-				CalculatePatrolPoint();
-			}
-			else
-			{
-				nav.destination=patrolPosition;
+		if (attacking == false) {
+			nav.Resume();
+			if (Vector3.Distance (hero.transform.position, nav.transform.position) <= heroDetectionRange && aggressive) {
+				ChaseHero ();
+			} else {
+				if (inDestiny) {
+					CalculatePatrolPoint ();
+				} else {
+					nav.destination = patrolPosition;
 
-				if(nav.remainingDistance==0)
-					inDestiny=true;
+					if (nav.remainingDistance == 0)
+						inDestiny = true;
+				}
+				followingHero = false;
+				anim.SetBool ("chasing", false);
+				nav.speed = 8;
 			}
-			followingHero=false;
-			anim.SetBool ("chasing",false);
-			nav.speed=4;
-		}
-
+		} else
+			nav.Stop ();
 	}
 
 	void ChaseHero()
@@ -73,6 +77,32 @@ public class EnemyAggro : MonoBehaviour {
 		patrolPosition = hit.position;
 		
 		inDestiny=false;
-		nav.speed=10;
+		nav.speed=20;
 	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.transform.tag == "Character") {
+			if(attacking==false)
+			{
+			attacking=true;
+			Invoke("attack",1f);
+			}
+		}
+	}
+
+	void attack()
+	{
+		if (attacking == true) {
+			anim.SetTrigger("attacking");
+			hero.GetComponent<CharacterStatus>().takeDamage(20);
+			Invoke("attack",1f);
+		}
+	}
+
+	void OnTriggerExit(Collider other) {
+		if (other.transform.tag == "Character") {
+			attacking=false;
+		}
+	}
+
 }
