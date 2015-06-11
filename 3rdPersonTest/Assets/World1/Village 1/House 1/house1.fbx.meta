@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e9247c9e51d425c41a1357b33b12683b
-timeCreated: 1433145024
+guid: b09808b50be3ecd45a9d15b72a64ed58
+timeCreated: 1434028499
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,28 +9,23 @@ ModelImporter:
     100002: Cube.003
     100004: Cube.004
     100006: Cube.005
-    100008: Cube.006
-    100010: //RootNode
-    100012: Sun
+    100008: //RootNode
+    100010: Sun
     400000: Camera
     400002: Cube.003
     400004: Cube.004
     400006: Cube.005
-    400008: Cube.006
-    400010: //RootNode
-    400012: Sun
+    400008: //RootNode
+    400010: Sun
     2300000: Cube.003
     2300002: Cube.004
     2300004: Cube.005
-    2300006: Cube.006
     3300000: Cube.003
     3300002: Cube.004
     3300004: Cube.005
-    3300006: Cube.006
-    4300000: Cube.006
-    4300002: Cube.005
-    4300004: Cube.004
-    4300006: Cube.003
+    4300000: Cube.005
+    4300002: Cube.004
+    4300004: Cube.003
   materials:
     importMaterials: 1
     materialName: 0
