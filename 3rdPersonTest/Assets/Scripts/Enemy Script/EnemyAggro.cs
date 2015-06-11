@@ -8,7 +8,8 @@ public class EnemyAggro : MonoBehaviour {
 	private Animator anim;
 
 	public bool aggressive;
-
+	public int walkSpeed;
+	public int runSpeed;
 
 	public int heroDetectionRange;
 	public int patrolRange;
@@ -40,7 +41,7 @@ public class EnemyAggro : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (attacking == false) {
-			nav.Resume();
+			nav.enabled=true;
 			if (Vector3.Distance (hero.transform.position, nav.transform.position) <= heroDetectionRange && aggressive) {
 				ChaseHero ();
 			} else {
@@ -54,10 +55,9 @@ public class EnemyAggro : MonoBehaviour {
 				}
 				followingHero = false;
 				anim.SetBool ("chasing", false);
-				nav.speed = 8;
+				nav.speed = walkSpeed;
 			}
-		} else
-			nav.Stop ();
+		} 
 	}
 
 	void ChaseHero()
@@ -77,7 +77,7 @@ public class EnemyAggro : MonoBehaviour {
 		patrolPosition = hit.position;
 		
 		inDestiny=false;
-		nav.speed=20;
+		nav.speed=runSpeed;
 	}
 
 	void OnTriggerEnter(Collider other) {
@@ -85,6 +85,7 @@ public class EnemyAggro : MonoBehaviour {
 			if(attacking==false)
 			{
 			attacking=true;
+			nav.enabled=false;
 			Invoke("attack",1f);
 			}
 		}
@@ -93,7 +94,8 @@ public class EnemyAggro : MonoBehaviour {
 	void attack()
 	{
 		if (attacking == true) {
-			anim.SetTrigger("attacking");
+			Debug.Log("attack");
+			anim.SetTrigger("attack");
 			hero.GetComponent<CharacterStatus>().takeDamage(20);
 			Invoke("attack",1f);
 		}
