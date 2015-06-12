@@ -94,7 +94,6 @@ public class EnemyAggro : MonoBehaviour {
 	void attack()
 	{
 		if (attacking == true) {
-			Debug.Log("attack");
 			anim.SetTrigger("attack");
 			hero.GetComponent<CharacterStatus>().takeDamage(20);
 			Invoke("attack",1f);
