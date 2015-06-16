@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 296ff213446774f4fa9c83d4f90cc32c
-timeCreated: 1434044834
+guid: 3b2af45e1088abc40bc0cc2df9bbd00c
+timeCreated: 1434461963
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,199 +9,440 @@ ModelImporter:
     100002: arm.R
     100004: arm001.L
     100006: arm001.R
-    100008: Camera
-    100010: Cube
-    100012: elbowik.L
-    100014: elbowik.L_end
-    100016: elbowik.R
-    100018: elbowik.R_end
-    100020: esqueleto
-    100022: f_index.01.L
-    100024: f_index.01.R
-    100026: f_index.02.L
-    100028: f_index.02.L_end
-    100030: f_index.02.R
-    100032: f_index.02.R_end
-    100034: f_middle.01.L
-    100036: f_middle.01.R
-    100038: f_middle.02.L
-    100040: f_middle.02.L_end
-    100042: f_middle.02.R
-    100044: f_middle.02.R_end
-    100046: f_ring.01.L
-    100048: f_ring.01.R
-    100050: f_ring.02.L
-    100052: f_ring.02.L_end
-    100054: f_ring.02.R
-    100056: f_ring.02.R_end
-    100058: foot.L
-    100060: foot.R
-    100062: foot2ik.L
-    100064: foot2ik.L_end
-    100066: foot2ik.R
-    100068: foot2ik.R_end
-    100070: footik.L
-    100072: footik.R
-    100074: hand.L
-    100076: hand.R
-    100078: handik.L
-    100080: handik.L_end
-    100082: handik.R
-    100084: handik.R_end
-    100086: head
-    100088: head.001
-    100090: head.002
-    100092: head.002_end
-    100094: kneepole.L
-    100096: kneepole.L_end
-    100098: kneepole.R
-    100100: kneepole.R_end
-    100102: Lamp
-    100104: leg.001.L
-    100106: leg.001.L_end
-    100108: leg.001.R
-    100110: leg.001.R_end
-    100112: leg.L
-    100114: leg.R
-    100116: legcontroler.L
-    100118: legcontroler.R
-    100120: 'neck '
-    100122: palm.01.L
-    100124: palm.01.R
-    100126: palm.02.L
-    100128: palm.02.R
-    100130: palm.03.L
-    100132: palm.03.R
-    100134: root
-    100136: shoulder.L
-    100138: shoulder.R
-    100140: Sphere
-    100142: spine
-    100144: spine.001
-    100146: thumb.01.L
-    100148: thumb.01.R
-    100150: thumb.02.L
-    100152: thumb.02.R
-    100154: thumb.03.L
-    100156: thumb.03.L_end
-    100158: thumb.03.R
-    100160: thumb.03.R_end
-    100162: toes.L
-    100164: toes.L_end
-    100166: toes.R
-    100168: toes.R_end
-    100170: toesik.L
-    100172: toesik.L_end
-    100174: toesik.R
-    100176: toesik.R_end
-    100178: //RootNode
+    100008: bracelete
+    100010: bracelete.001
+    100012: bracelete.002
+    100014: bracelete.003
+    100016: "cal\xE7as"
+    100018: Camera.001
+    100020: camisola
+    100022: chapeu
+    100024: cinto
+    100026: corpo
+    100028: corpo.001
+    100030: Cube
+    100032: Cylinder
+    100034: elbowik.L
+    100036: elbowik.L_end
+    100038: elbowik.R
+    100040: elbowik.R_end
+    100042: esqueleto
+    100044: f_index.01.L
+    100046: f_index.01.R
+    100048: f_index.02.L
+    100050: f_index.02.L_end
+    100052: f_index.02.R
+    100054: f_index.02.R_end
+    100056: f_middle.01.L
+    100058: f_middle.01.R
+    100060: f_middle.02.L
+    100062: f_middle.02.L_end
+    100064: f_middle.02.R
+    100066: f_middle.02.R_end
+    100068: f_ring.01.L
+    100070: f_ring.01.R
+    100072: f_ring.02.L
+    100074: f_ring.02.L_end
+    100076: f_ring.02.R
+    100078: f_ring.02.R_end
+    100080: foot.L
+    100082: foot.R
+    100084: foot2ik.L
+    100086: foot2ik.L_end
+    100088: foot2ik.R
+    100090: foot2ik.R_end
+    100092: footik.L
+    100094: footik.R
+    100096: hand.L
+    100098: hand.R
+    100100: handik.L
+    100102: handik.L_end
+    100104: handik.R
+    100106: handik.R_end
+    100108: head
+    100110: head.001
+    100112: head.002
+    100114: head.002_end
+    100116: kneepole.L
+    100118: kneepole.L_end
+    100120: kneepole.R
+    100122: kneepole.R_end
+    100124: Lamp.001
+    100126: leg.001.L
+    100128: leg.001.L_end
+    100130: leg.001.R
+    100132: leg.001.R_end
+    100134: leg.L
+    100136: leg.R
+    100138: legcontroler.L
+    100140: legcontroler.R
+    100142: 'neck '
+    100144: palm.01.L
+    100146: palm.01.R
+    100148: palm.02.L
+    100150: palm.02.R
+    100152: palm.03.L
+    100154: palm.03.R
+    100156: Plane
+    100158: root
+    100160: shoulder.L
+    100162: shoulder.R
+    100164: Sphere
+    100166: spine
+    100168: spine.001
+    100170: thumb.01.L
+    100172: thumb.01.R
+    100174: thumb.02.L
+    100176: thumb.02.R
+    100178: thumb.03.L
+    100180: thumb.03.L_end
+    100182: thumb.03.R
+    100184: thumb.03.R_end
+    100186: toes.L
+    100188: toes.L_end
+    100190: toes.R
+    100192: toes.R_end
+    100194: toesik.L
+    100196: toesik.L_end
+    100198: toesik.R
+    100200: toesik.R_end
+    100202: Torus
+    100204: //RootNode
     400000: arm.L
     400002: arm.R
     400004: arm001.L
     400006: arm001.R
-    400008: Camera
-    400010: Cube
-    400012: elbowik.L
-    400014: elbowik.L_end
-    400016: elbowik.R
-    400018: elbowik.R_end
-    400020: esqueleto
-    400022: f_index.01.L
-    400024: f_index.01.R
-    400026: f_index.02.L
-    400028: f_index.02.L_end
-    400030: f_index.02.R
-    400032: f_index.02.R_end
-    400034: f_middle.01.L
-    400036: f_middle.01.R
-    400038: f_middle.02.L
-    400040: f_middle.02.L_end
-    400042: f_middle.02.R
-    400044: f_middle.02.R_end
-    400046: f_ring.01.L
-    400048: f_ring.01.R
-    400050: f_ring.02.L
-    400052: f_ring.02.L_end
-    400054: f_ring.02.R
-    400056: f_ring.02.R_end
-    400058: foot.L
-    400060: foot.R
-    400062: foot2ik.L
-    400064: foot2ik.L_end
-    400066: foot2ik.R
-    400068: foot2ik.R_end
-    400070: footik.L
-    400072: footik.R
-    400074: hand.L
-    400076: hand.R
-    400078: handik.L
-    400080: handik.L_end
-    400082: handik.R
-    400084: handik.R_end
-    400086: head
-    400088: head.001
-    400090: head.002
-    400092: head.002_end
-    400094: kneepole.L
-    400096: kneepole.L_end
-    400098: kneepole.R
-    400100: kneepole.R_end
-    400102: Lamp
-    400104: leg.001.L
-    400106: leg.001.L_end
-    400108: leg.001.R
-    400110: leg.001.R_end
-    400112: leg.L
-    400114: leg.R
-    400116: legcontroler.L
-    400118: legcontroler.R
-    400120: 'neck '
-    400122: palm.01.L
-    400124: palm.01.R
-    400126: palm.02.L
-    400128: palm.02.R
-    400130: palm.03.L
-    400132: palm.03.R
-    400134: root
-    400136: shoulder.L
-    400138: shoulder.R
-    400140: Sphere
-    400142: spine
-    400144: spine.001
-    400146: thumb.01.L
-    400148: thumb.01.R
-    400150: thumb.02.L
-    400152: thumb.02.R
-    400154: thumb.03.L
-    400156: thumb.03.L_end
-    400158: thumb.03.R
-    400160: thumb.03.R_end
-    400162: toes.L
-    400164: toes.L_end
-    400166: toes.R
-    400168: toes.R_end
-    400170: toesik.L
-    400172: toesik.L_end
-    400174: toesik.R
-    400176: toesik.R_end
-    400178: //RootNode
+    400008: bracelete
+    400010: bracelete.001
+    400012: bracelete.002
+    400014: bracelete.003
+    400016: "cal\xE7as"
+    400018: Camera.001
+    400020: camisola
+    400022: chapeu
+    400024: cinto
+    400026: corpo
+    400028: corpo.001
+    400030: Cube
+    400032: Cylinder
+    400034: elbowik.L
+    400036: elbowik.L_end
+    400038: elbowik.R
+    400040: elbowik.R_end
+    400042: esqueleto
+    400044: f_index.01.L
+    400046: f_index.01.R
+    400048: f_index.02.L
+    400050: f_index.02.L_end
+    400052: f_index.02.R
+    400054: f_index.02.R_end
+    400056: f_middle.01.L
+    400058: f_middle.01.R
+    400060: f_middle.02.L
+    400062: f_middle.02.L_end
+    400064: f_middle.02.R
+    400066: f_middle.02.R_end
+    400068: f_ring.01.L
+    400070: f_ring.01.R
+    400072: f_ring.02.L
+    400074: f_ring.02.L_end
+    400076: f_ring.02.R
+    400078: f_ring.02.R_end
+    400080: foot.L
+    400082: foot.R
+    400084: foot2ik.L
+    400086: foot2ik.L_end
+    400088: foot2ik.R
+    400090: foot2ik.R_end
+    400092: footik.L
+    400094: footik.R
+    400096: hand.L
+    400098: hand.R
+    400100: handik.L
+    400102: handik.L_end
+    400104: handik.R
+    400106: handik.R_end
+    400108: head
+    400110: head.001
+    400112: head.002
+    400114: head.002_end
+    400116: kneepole.L
+    400118: kneepole.L_end
+    400120: kneepole.R
+    400122: kneepole.R_end
+    400124: Lamp.001
+    400126: leg.001.L
+    400128: leg.001.L_end
+    400130: leg.001.R
+    400132: leg.001.R_end
+    400134: leg.L
+    400136: leg.R
+    400138: legcontroler.L
+    400140: legcontroler.R
+    400142: 'neck '
+    400144: palm.01.L
+    400146: palm.01.R
+    400148: palm.02.L
+    400150: palm.02.R
+    400152: palm.03.L
+    400154: palm.03.R
+    400156: Plane
+    400158: root
+    400160: shoulder.L
+    400162: shoulder.R
+    400164: Sphere
+    400166: spine
+    400168: spine.001
+    400170: thumb.01.L
+    400172: thumb.01.R
+    400174: thumb.02.L
+    400176: thumb.02.R
+    400178: thumb.03.L
+    400180: thumb.03.L_end
+    400182: thumb.03.R
+    400184: thumb.03.R_end
+    400186: toes.L
+    400188: toes.L_end
+    400190: toes.R
+    400192: toes.R_end
+    400194: toesik.L
+    400196: toesik.L_end
+    400198: toesik.R
+    400200: toesik.R_end
+    400202: Torus
+    400204: //RootNode
     2300000: Cube
+    2300002: Plane
     3300000: Cube
+    3300002: Plane
     4300000: Cube
-    4300002: Sphere
-    7400000: Lamp|CameraAction
-    7400002: Lamp|LampAction
-    7400004: Camera|CameraAction
-    7400006: Camera|LampAction
-    7400008: esqueleto|CameraAction
-    7400010: esqueleto|esqueletoAction
-    7400012: esqueleto|LampAction
-    7400014: Sphere|CameraAction
-    7400016: Sphere|LampAction
-    7400018: Cube|CameraAction
-    7400020: Cube|LampAction
+    4300002: corpo
+    4300004: camisola
+    4300006: bracelete.001
+    4300008: bracelete
+    4300010: "cal\xE7as"
+    4300012: cinto
+    4300014: Sphere
+    4300016: chapeu
+    4300018: corpo.001
+    4300020: Cylinder
+    4300022: Torus
+    4300024: bracelete.003
+    4300026: bracelete.002
+    4300028: Plane
+    7400000: esqueleto|bracelete.001Action
+    7400002: esqueleto|bracelete.002Action
+    7400004: esqueleto|bracelete.003Action
+    7400006: esqueleto|braceleteAction
+    7400008: "esqueleto|cal\xE7asAction"
+    7400010: esqueleto|camisolaAction
+    7400012: esqueleto|chapeuAction
+    7400014: esqueleto|cintoAction
+    7400016: esqueleto|corpo.001Action
+    7400018: esqueleto|corpoAction
+    7400020: esqueleto|CylinderAction
+    7400022: BigJump
+    7400024: corpo|bracelete.001Action
+    7400026: corpo|bracelete.002Action
+    7400028: corpo|bracelete.003Action
+    7400030: corpo|braceleteAction
+    7400032: "corpo|cal\xE7asAction"
+    7400034: corpo|camisolaAction
+    7400036: corpo|chapeuAction
+    7400038: corpo|cintoAction
+    7400040: corpo|corpo.001Action
+    7400042: corpo|corpoAction
+    7400044: corpo|CylinderAction
+    7400046: camisola|bracelete.001Action
+    7400048: camisola|bracelete.002Action
+    7400050: camisola|bracelete.003Action
+    7400052: camisola|braceleteAction
+    7400054: "camisola|cal\xE7asAction"
+    7400056: camisola|camisolaAction
+    7400058: camisola|chapeuAction
+    7400060: camisola|cintoAction
+    7400062: camisola|corpo.001Action
+    7400064: camisola|corpoAction
+    7400066: camisola|CylinderAction
+    7400068: bracelete.001|bracelete.001Action
+    7400070: bracelete.001|bracelete.002Action
+    7400072: bracelete.001|bracelete.003Action
+    7400074: bracelete.001|braceleteAction
+    7400076: "bracelete.001|cal\xE7asAction"
+    7400078: bracelete.001|camisolaAction
+    7400080: bracelete.001|chapeuAction
+    7400082: bracelete.001|cintoAction
+    7400084: bracelete.001|corpo.001Action
+    7400086: bracelete.001|corpoAction
+    7400088: bracelete.001|CylinderAction
+    7400090: bracelete|bracelete.001Action
+    7400092: bracelete|bracelete.002Action
+    7400094: bracelete|bracelete.003Action
+    7400096: bracelete|braceleteAction
+    7400098: "bracelete|cal\xE7asAction"
+    7400100: bracelete|camisolaAction
+    7400102: bracelete|chapeuAction
+    7400104: bracelete|cintoAction
+    7400106: bracelete|corpo.001Action
+    7400108: bracelete|corpoAction
+    7400110: bracelete|CylinderAction
+    7400112: "cal\xE7as|bracelete.001Action"
+    7400114: "cal\xE7as|bracelete.002Action"
+    7400116: "cal\xE7as|bracelete.003Action"
+    7400118: "cal\xE7as|braceleteAction"
+    7400120: "cal\xE7as|cal\xE7asAction"
+    7400122: "cal\xE7as|camisolaAction"
+    7400124: "cal\xE7as|chapeuAction"
+    7400126: "cal\xE7as|cintoAction"
+    7400128: "cal\xE7as|corpo.001Action"
+    7400130: "cal\xE7as|corpoAction"
+    7400132: "cal\xE7as|CylinderAction"
+    7400134: cinto|bracelete.001Action
+    7400136: cinto|bracelete.002Action
+    7400138: cinto|bracelete.003Action
+    7400140: cinto|braceleteAction
+    7400142: "cinto|cal\xE7asAction"
+    7400144: cinto|camisolaAction
+    7400146: cinto|chapeuAction
+    7400148: cinto|cintoAction
+    7400150: cinto|corpo.001Action
+    7400152: cinto|corpoAction
+    7400154: cinto|CylinderAction
+    7400156: Sphere|bracelete.001Action
+    7400158: Sphere|bracelete.002Action
+    7400160: Sphere|bracelete.003Action
+    7400162: Sphere|braceleteAction
+    7400164: "Sphere|cal\xE7asAction"
+    7400166: Sphere|camisolaAction
+    7400168: Sphere|chapeuAction
+    7400170: Sphere|cintoAction
+    7400172: Sphere|corpo.001Action
+    7400174: Sphere|corpoAction
+    7400176: Sphere|CylinderAction
+    7400178: chapeu|bracelete.001Action
+    7400180: chapeu|bracelete.002Action
+    7400182: chapeu|bracelete.003Action
+    7400184: chapeu|braceleteAction
+    7400186: "chapeu|cal\xE7asAction"
+    7400188: chapeu|camisolaAction
+    7400190: chapeu|chapeuAction
+    7400192: chapeu|cintoAction
+    7400194: chapeu|corpo.001Action
+    7400196: chapeu|corpoAction
+    7400198: chapeu|CylinderAction
+    7400200: corpo.001|bracelete.001Action
+    7400202: corpo.001|bracelete.002Action
+    7400204: corpo.001|bracelete.003Action
+    7400206: corpo.001|braceleteAction
+    7400208: "corpo.001|cal\xE7asAction"
+    7400210: corpo.001|camisolaAction
+    7400212: corpo.001|chapeuAction
+    7400214: corpo.001|cintoAction
+    7400216: corpo.001|corpo.001Action
+    7400218: corpo.001|corpoAction
+    7400220: corpo.001|CylinderAction
+    7400222: Cylinder|bracelete.001Action
+    7400224: Cylinder|bracelete.002Action
+    7400226: Cylinder|bracelete.003Action
+    7400228: Cylinder|braceleteAction
+    7400230: "Cylinder|cal\xE7asAction"
+    7400232: Cylinder|camisolaAction
+    7400234: Cylinder|chapeuAction
+    7400236: Cylinder|cintoAction
+    7400238: Cylinder|corpo.001Action
+    7400240: Cylinder|corpoAction
+    7400242: Cylinder|CylinderAction
+    7400244: Torus|bracelete.001Action
+    7400246: Torus|bracelete.002Action
+    7400248: Torus|bracelete.003Action
+    7400250: Torus|braceleteAction
+    7400252: "Torus|cal\xE7asAction"
+    7400254: Torus|camisolaAction
+    7400256: Torus|chapeuAction
+    7400258: Torus|cintoAction
+    7400260: Torus|corpo.001Action
+    7400262: Torus|corpoAction
+    7400264: Torus|CylinderAction
+    7400266: bracelete.003|bracelete.001Action
+    7400268: bracelete.003|bracelete.002Action
+    7400270: bracelete.003|bracelete.003Action
+    7400272: bracelete.003|braceleteAction
+    7400274: "bracelete.003|cal\xE7asAction"
+    7400276: bracelete.003|camisolaAction
+    7400278: bracelete.003|chapeuAction
+    7400280: bracelete.003|cintoAction
+    7400282: bracelete.003|corpo.001Action
+    7400284: bracelete.003|corpoAction
+    7400286: bracelete.003|CylinderAction
+    7400288: bracelete.002|bracelete.001Action
+    7400290: bracelete.002|bracelete.002Action
+    7400292: bracelete.002|bracelete.003Action
+    7400294: bracelete.002|braceleteAction
+    7400296: "bracelete.002|cal\xE7asAction"
+    7400298: bracelete.002|camisolaAction
+    7400300: bracelete.002|chapeuAction
+    7400302: bracelete.002|cintoAction
+    7400304: bracelete.002|corpo.001Action
+    7400306: bracelete.002|corpoAction
+    7400308: bracelete.002|CylinderAction
+    7400310: Cube|bracelete.001Action
+    7400312: Cube|bracelete.002Action
+    7400314: Cube|bracelete.003Action
+    7400316: Cube|braceleteAction
+    7400318: "Cube|cal\xE7asAction"
+    7400320: Cube|camisolaAction
+    7400322: Cube|chapeuAction
+    7400324: Cube|cintoAction
+    7400326: Cube|corpo.001Action
+    7400328: Cube|corpoAction
+    7400330: Cube|CylinderAction
+    7400332: Camera.001|bracelete.001Action
+    7400334: Camera.001|bracelete.002Action
+    7400336: Camera.001|bracelete.003Action
+    7400338: Camera.001|braceleteAction
+    7400340: "Camera.001|cal\xE7asAction"
+    7400342: Camera.001|camisolaAction
+    7400344: Camera.001|chapeuAction
+    7400346: Camera.001|cintoAction
+    7400348: Camera.001|corpo.001Action
+    7400350: Camera.001|corpoAction
+    7400352: Camera.001|CylinderAction
+    7400354: Lamp.001|bracelete.001Action
+    7400356: Lamp.001|bracelete.002Action
+    7400358: Lamp.001|bracelete.003Action
+    7400360: Lamp.001|braceleteAction
+    7400362: "Lamp.001|cal\xE7asAction"
+    7400364: Lamp.001|camisolaAction
+    7400366: Lamp.001|chapeuAction
+    7400368: Lamp.001|cintoAction
+    7400370: Lamp.001|corpo.001Action
+    7400372: Lamp.001|corpoAction
+    7400374: Lamp.001|CylinderAction
+    7400376: Plane|bracelete.001Action
+    7400378: Plane|bracelete.002Action
+    7400380: Plane|bracelete.003Action
+    7400382: Plane|braceleteAction
+    7400384: "Plane|cal\xE7asAction"
+    7400386: Plane|camisolaAction
+    7400388: Plane|chapeuAction
+    7400390: Plane|cintoAction
+    7400392: Plane|corpo.001Action
+    7400394: Plane|corpoAction
+    7400396: Plane|CylinderAction
     9500000: //RootNode
-    13700000: Sphere
+    13700000: bracelete
+    13700002: bracelete.001
+    13700004: bracelete.002
+    13700006: bracelete.003
+    13700008: "cal\xE7as"
+    13700010: camisola
+    13700012: chapeu
+    13700014: cinto
+    13700016: corpo
+    13700018: corpo.001
+    13700020: Cylinder
+    13700022: Sphere
+    13700024: Torus
   materials:
     importMaterials: 1
     materialName: 0
@@ -217,7 +458,239 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: BigJump
+      takeName: esqueleto|esqueletoAction
+      firstFrame: 0
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bracelete
+        weight: 1
+      - path: bracelete.001
+        weight: 1
+      - path: bracelete.002
+        weight: 1
+      - path: bracelete.003
+        weight: 1
+      - path: "cal\xE7as"
+        weight: 1
+      - path: Camera.001
+        weight: 1
+      - path: camisola
+        weight: 1
+      - path: chapeu
+        weight: 1
+      - path: cinto
+        weight: 1
+      - path: corpo
+        weight: 1
+      - path: corpo.001
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: esqueleto
+        weight: 1
+      - path: esqueleto/root
+        weight: 1
+      - path: esqueleto/root/elbowik.L
+        weight: 1
+      - path: esqueleto/root/elbowik.L/elbowik.L_end
+        weight: 1
+      - path: esqueleto/root/elbowik.R
+        weight: 1
+      - path: esqueleto/root/elbowik.R/elbowik.R_end
+        weight: 1
+      - path: esqueleto/root/kneepole.L
+        weight: 1
+      - path: esqueleto/root/kneepole.L/kneepole.L_end
+        weight: 1
+      - path: esqueleto/root/kneepole.R
+        weight: 1
+      - path: esqueleto/root/kneepole.R/kneepole.R_end
+        weight: 1
+      - path: esqueleto/root/legcontroler.L
+        weight: 1
+      - path: esqueleto/root/legcontroler.L/foot.L
+        weight: 1
+      - path: esqueleto/root/legcontroler.L/foot.L/toes.L
+        weight: 1
+      - path: esqueleto/root/legcontroler.L/foot.L/toes.L/toes.L_end
+        weight: 1
+      - path: esqueleto/root/legcontroler.L/footik.L
+        weight: 1
+      - path: esqueleto/root/legcontroler.L/footik.L/foot2ik.L
+        weight: 1
+      - path: esqueleto/root/legcontroler.L/footik.L/foot2ik.L/foot2ik.L_end
+        weight: 1
+      - path: esqueleto/root/legcontroler.L/toesik.L
+        weight: 1
+      - path: esqueleto/root/legcontroler.L/toesik.L/toesik.L_end
+        weight: 1
+      - path: esqueleto/root/legcontroler.R
+        weight: 1
+      - path: esqueleto/root/legcontroler.R/foot.R
+        weight: 1
+      - path: esqueleto/root/legcontroler.R/foot.R/toes.R
+        weight: 1
+      - path: esqueleto/root/legcontroler.R/foot.R/toes.R/toes.R_end
+        weight: 1
+      - path: esqueleto/root/legcontroler.R/footik.R
+        weight: 1
+      - path: esqueleto/root/legcontroler.R/footik.R/foot2ik.R
+        weight: 1
+      - path: esqueleto/root/legcontroler.R/footik.R/foot2ik.R/foot2ik.R_end
+        weight: 1
+      - path: esqueleto/root/legcontroler.R/toesik.R
+        weight: 1
+      - path: esqueleto/root/legcontroler.R/toesik.R/toesik.R_end
+        weight: 1
+      - path: esqueleto/root/spine
+        weight: 1
+      - path: esqueleto/root/spine/leg.L
+        weight: 1
+      - path: esqueleto/root/spine/leg.L/leg.001.L
+        weight: 1
+      - path: esqueleto/root/spine/leg.L/leg.001.L/leg.001.L_end
+        weight: 1
+      - path: esqueleto/root/spine/leg.R
+        weight: 1
+      - path: esqueleto/root/spine/leg.R/leg.001.R
+        weight: 1
+      - path: esqueleto/root/spine/leg.R/leg.001.R/leg.001.R_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001
+        weight: 1
+      - path: 'esqueleto/root/spine/spine.001/neck '
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/neck /head
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/neck /head/head.001
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/neck /head/head.001/head.002
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/neck /head/head.001/head.002/head.002_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.01.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.01.L/f_index.01.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.01.L/f_index.01.L/f_index.02.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.01.L/f_index.01.L/f_index.02.L/f_index.02.L_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.01.L/thumb.01.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.01.L/thumb.01.L/thumb.02.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.01.L/thumb.01.L/thumb.02.L/thumb.03.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.01.L/thumb.01.L/thumb.02.L/thumb.03.L/thumb.03.L_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.02.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.02.L/f_middle.01.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.02.L/f_middle.01.L/f_middle.02.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.02.L/f_middle.01.L/f_middle.02.L/f_middle.02.L_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.03.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.03.L/f_ring.01.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.03.L/f_ring.01.L/f_ring.02.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/arm.L/arm001.L/hand.L/palm.03.L/f_ring.01.L/f_ring.02.L/f_ring.02.L_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/handik.L
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.L/handik.L/handik.L_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/Cube
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.01.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.01.R/f_index.01.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.01.R/f_index.01.R/f_index.02.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.01.R/f_index.01.R/f_index.02.R/f_index.02.R_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.01.R/thumb.01.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.01.R/thumb.01.R/thumb.02.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.01.R/thumb.01.R/thumb.02.R/thumb.03.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.01.R/thumb.01.R/thumb.02.R/thumb.03.R/thumb.03.R_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.02.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.02.R/f_middle.01.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.02.R/f_middle.01.R/f_middle.02.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.02.R/f_middle.01.R/f_middle.02.R/f_middle.02.R_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.03.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.03.R/f_ring.01.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.03.R/f_ring.01.R/f_ring.02.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/arm.R/arm001.R/hand.R/palm.03.R/f_ring.01.R/f_ring.02.R/f_ring.02.R_end
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/handik.R
+        weight: 1
+      - path: esqueleto/root/spine/spine.001/shoulder.R/handik.R/handik.R_end
+        weight: 1
+      - path: Lamp.001
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Sphere
+        weight: 1
+      - path: Torus
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
