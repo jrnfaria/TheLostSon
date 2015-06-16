@@ -79,6 +79,12 @@ public class EnemyAggro : MonoBehaviour {
 		
 		inDestiny=false;
 		nav.speed=runSpeed;
+
+		NavMeshPath path = new NavMeshPath();
+		bool hasFoundPath = nav.CalculatePath(patrolPosition, path);
+
+		if (!hasFoundPath)
+			CalculatePatrolPoint ();
 	}
 
 	void OnTriggerEnter(Collider other) {
