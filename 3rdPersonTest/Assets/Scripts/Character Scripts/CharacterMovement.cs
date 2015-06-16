@@ -21,9 +21,9 @@ public class CharacterMovement : MonoBehaviour {
 	}
 	
 	void Update() {
-		
-		anim.SetInteger("move",0);
+
 		if (controller.isGrounded) {
+			anim.SetInteger("move",0);
 			if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) ||Input.GetKey(KeyCode.D)){
 				if(Input.GetKey(KeyCode.LeftShift)){
 					anim.SetInteger("move",2);//run
