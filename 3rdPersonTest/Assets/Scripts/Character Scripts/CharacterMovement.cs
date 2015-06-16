@@ -35,17 +35,14 @@ public class CharacterMovement : MonoBehaviour {
 			vertical = Input.GetAxis("Vertical");
 
 			transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
-			if(vertical<0){
-				transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y+180, transform.localEulerAngles.z);
-				//setAngle(Camera.main.transform.localEulerAngles.y+180);
+			/*if(vertical<0){
+				controller.transform.Rotate(new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y-180, transform.localEulerAngles.z));
 			}
 			if(horizontal>0){
-				transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y+90, transform.localEulerAngles.z);
-				//setAngle(Camera.main.transform.localEulerAngles.y+90);
+				transform.Rotate(Vector3.right * Time.deltaTime);
 			}else if(horizontal<0){
-				transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y-90, transform.localEulerAngles.z);
-				//setAngle(Camera.main.transform.localEulerAngles.y-90);
-			}
+				transform.Rotate(Vector3.left * Time.deltaTime);
+			}*/
 
 			moveDirection = new Vector3(horizontal, 0, vertical);
 			moveDirection = transform.TransformDirection(moveDirection);
