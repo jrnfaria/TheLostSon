@@ -7,17 +7,15 @@ public class CharacterMovement : MonoBehaviour {
 	public float jumpSpeed = 8.0F;
 	public float gravity = 20.0F;
 	public Animator anim;
+
+	private float horizontal, vertical;
 	
 	private CharacterController controller ;
 	private Vector3 moveDirection = Vector3.zero;
-	
-	
-	
+
 	void Start () {
 		controller = GetComponent<CharacterController> ();
 		anim= GetComponent<Animator> ();
-		
-		
 	}
 	
 	void Update() {
@@ -33,7 +31,23 @@ public class CharacterMovement : MonoBehaviour {
 					speed = 5.0F;
 				}
 			}
-			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+			horizontal = Input.GetAxis("Horizontal");
+			vertical = Input.GetAxis("Vertical");
+
+			transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
+			if(vertical<0){
+				transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y+180, transform.localEulerAngles.z);
+				//setAngle(Camera.main.transform.localEulerAngles.y+180);
+			}
+			if(horizontal>0){
+				transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y+90, transform.localEulerAngles.z);
+				//setAngle(Camera.main.transform.localEulerAngles.y+90);
+			}else if(horizontal<0){
+				transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y-90, transform.localEulerAngles.z);
+				//setAngle(Camera.main.transform.localEulerAngles.y-90);
+			}
+
+			moveDirection = new Vector3(horizontal, 0, vertical);
 			moveDirection = transform.TransformDirection(moveDirection);
 			moveDirection *= speed;
 			
@@ -47,8 +61,22 @@ public class CharacterMovement : MonoBehaviour {
 		moveDirection.y -= gravity * Time.deltaTime;
 		
 		controller.Move(moveDirection * Time.deltaTime);
-		
-		transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
+	}
+
+	void setAngle(float angle){
+		if (angle >= 0 && angle < 90) {
+			horizontal=1;
+			vertical=1;
+		}else if(angle >= 90 && angle < 180){
+			horizontal=-1;
+			vertical=1;
+		}else if(angle >= 180 && angle < 270){
+			horizontal=-1;
+			vertical=-1;
+		}else if(angle >= 270 && angle < 360){
+			horizontal=1;
+			vertical=-1;
+		}
 	}
 	
 }
