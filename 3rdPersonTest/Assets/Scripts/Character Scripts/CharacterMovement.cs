@@ -25,10 +25,10 @@ public class CharacterMovement : MonoBehaviour {
 			if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) ||Input.GetKey(KeyCode.D)){
 				if(Input.GetKey(KeyCode.LeftShift)){
 					anim.SetInteger("move",2);//run
-					speed = 15.0F;
+					speed = 15.0f;
 				}else{
 					anim.SetInteger("move",1);//walk
-					speed = 5.0F;
+					speed = 5.0f;
 				}
 			}
 			//transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
@@ -54,6 +54,14 @@ public class CharacterMovement : MonoBehaviour {
 		moveDirection.y -= gravity * Time.deltaTime;
 		
 		controller.Move(moveDirection * Time.deltaTime);
+
+		attack ();
+	}
+
+	void attack(){
+		if (Input.GetMouseButtonDown(0)) {//left click
+			anim.SetInteger ("move", 5);//normal attack
+		}
 	}
 	
 }
