@@ -30,6 +30,10 @@ public class CharacterMovement : MonoBehaviour {
 					anim.SetInteger("move",1);//walk
 					speed = 5.0f;
 				}
+			}else if(Input.GetKey(KeyCode.Q)){
+				anim.SetInteger("move",9);//dodgeLeft
+			}else if(Input.GetKey(KeyCode.E)){
+				anim.SetInteger("move",8);//dodgeRight
 			}
 			//transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
 			if(Input.GetKey(KeyCode.D)){
