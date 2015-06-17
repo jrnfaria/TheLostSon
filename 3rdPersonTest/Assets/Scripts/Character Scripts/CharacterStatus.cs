@@ -22,9 +22,7 @@ public class CharacterStatus : MonoBehaviour {
 	
 	public Slider healthSlider;
 	public Slider staminaSlider;
-	public Slider expSlider;
 
-	public Text expTextInfo;
 	public Text lvlText;
 	public Text HPTextInfo;
 	public Text SPTextInfo;
@@ -53,11 +51,7 @@ public class CharacterStatus : MonoBehaviour {
 		staminaSlider.maxValue = stamina;
 		staminaSlider.value = stamina;
 
-		expSlider.maxValue = 100;
-		expSlider.value = exp;
-
-		//text
-		expTextInfo.text = "0/"+maxExp;
+	
 		lvlText.text = "Lvl:" + lvl;
 
 		HPTextInfo.text = health + "/" + fullHealth;
@@ -133,10 +127,9 @@ public class CharacterStatus : MonoBehaviour {
 			lvlText.text = "Lvl:" + lvl;
 			exp -= 100;
 			maxExp=maxExp*lvl;
-			expSlider.maxValue=maxExp;
+		
 		}
-		expTextInfo.text = exp+"/"+maxExp;
-		expSlider.value = exp;
+
 	}
 	
 	void OnTriggerStay(Collider other) {

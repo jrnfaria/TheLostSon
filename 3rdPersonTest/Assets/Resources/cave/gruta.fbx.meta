@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8d4cb6dded4f4b1409cdc43d23bf7ee0
-timeCreated: 1434560621
+guid: 3228535164a44b549a2e57ab835d86cd
+timeCreated: 1434569723
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -23,7 +23,7 @@ ModelImporter:
     4300002: Sphere
   materials:
     importMaterials: 1
-    materialName: 0
+    materialName: 2
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
