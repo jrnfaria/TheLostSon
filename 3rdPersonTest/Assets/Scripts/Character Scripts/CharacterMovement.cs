@@ -24,6 +24,7 @@ public class CharacterMovement : MonoBehaviour {
 			anim.SetInteger("move",0);
 
 			if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) ||Input.GetKey(KeyCode.D)){
+				idleAttack ();
 				if(Input.GetKey(KeyCode.LeftShift)){
 					anim.SetInteger("move",2);//run
 					speed = 15.0f;
@@ -32,17 +33,19 @@ public class CharacterMovement : MonoBehaviour {
 					speed = 5.0f;
 				}
 			}else if(Input.GetKey(KeyCode.Q)){
+				idleAttack ();
 				anim.SetInteger("move",9);//dodgeLeft
 			}else if(Input.GetKey(KeyCode.E)){
+				idleAttack ();
 				anim.SetInteger("move",8);//dodgeRight
 			}
-			//transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
-			if(Input.GetKey(KeyCode.D)){
+			transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
+			/*if(Input.GetKey(KeyCode.D)){
 				transform.Rotate(Vector3.up, Mathf.Clamp(180f * Time.deltaTime, 0f, 360f));
 			}
 			if(Input.GetKey(KeyCode.A)){
 				transform.Rotate(Vector3.up, -Mathf.Clamp(180f * Time.deltaTime, 0f, 360f));
-			}
+			}*/
 
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
 			moveDirection = transform.TransformDirection(moveDirection);
@@ -66,10 +69,10 @@ public class CharacterMovement : MonoBehaviour {
 			canIdleAttack=true;
 			anim.SetInteger ("move", 5);//normal attack
 		}else if (Input.GetMouseButtonDown(1)) {//right click
-			anim.SetInteger ("move", 6);//normal attack
+			anim.SetInteger ("move", 6);//Special attack 1
 			canIdleAttack=true;
-		}else if (Input.GetMouseButtonDown(2)) {//right click
-			anim.SetInteger ("move", 7);//normal attack
+		}else if (Input.GetMouseButtonDown(2)) {//mid click
+			anim.SetInteger ("move", 7);//Special attack 2
 			canIdleAttack=true;
 		}
 		if(canIdleAttack && anim.GetInteger("move")!=5 && anim.GetInteger("move")!=6 && anim.GetInteger("move")!=7){
@@ -79,6 +82,7 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 	void idleAttack(){
+		CancelInvoke("idleAttack");
 		canIdleAttack=false;
 		anim.SetInteger ("move", 0);//idle
 	}
