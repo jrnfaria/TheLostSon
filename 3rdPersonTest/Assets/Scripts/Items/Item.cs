@@ -19,4 +19,32 @@ public class Item{
 	public int itemAmount;
 	public itemType type;
 
+	public int hpRegen;
+	public int staminaRegen;
+
+	public GameObject dragon;
+	private bool invoked=false;
+
+	public void effect()
+	{
+		if (hpRegen != 0 || staminaRegen != 0) {
+			CharacterStatus hero = GameObject.FindGameObjectWithTag ("Character").GetComponent<CharacterStatus> ();
+			hero.regenHealth (hpRegen);
+			hero.regenStamina (staminaRegen);
+		} else if (dragon!=null) {
+			if(invoked)
+			{
+				GameObject.Destroy(GameObject.FindGameObjectWithTag("Dragon"));
+				invoked=false;
+			}
+			else
+			{
+				GameObject hero = GameObject.FindGameObjectWithTag ("Character");
+				GameObject Dragon=GameObject.Instantiate(dragon as GameObject);
+				Dragon.transform.parent=hero.transform;
+				Dragon.transform.localPosition=new Vector3(1.5f,2f,0);
+				invoked=true;
+			}
+		}
+	}
 }

@@ -82,7 +82,16 @@ public class Inventory : MonoBehaviour {
 
 						//use item
 						else if(e.type==EventType.mouseUp)
-							slotItems[i]=new Item();
+						{
+							slotItems[i].effect();
+							if(slotItems[i].type==Item.itemType.Potion)
+							{
+								slotItems[i].itemAmount-=1;
+								if(slotItems[i].itemAmount<=0)
+									slotItems[i]=new Item();
+							}
+
+						}
 					}
 					else
 					{
@@ -122,4 +131,8 @@ public class Inventory : MonoBehaviour {
 			}
 		}
 	}
+
+
+
+
 }
