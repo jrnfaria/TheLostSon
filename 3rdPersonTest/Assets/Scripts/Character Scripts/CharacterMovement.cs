@@ -59,7 +59,15 @@ public class CharacterMovement : MonoBehaviour {
 	void attack(){
 		if (Input.GetMouseButtonDown(0)) {//left click
 			anim.SetInteger ("move", 5);//normal attack
+		}else if (Input.GetMouseButtonDown(1)) {//right click
+			anim.SetInteger ("move", 6);//normal attack
+		}else if (Input.GetMouseButtonDown(2)) {//right click
+			anim.SetInteger ("move", 7);//normal attack
 		}
+	}
+
+	public int getMove(){
+		return anim.GetInteger ("move");
 	}
 	
 }
