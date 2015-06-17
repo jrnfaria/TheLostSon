@@ -100,13 +100,22 @@ public class CharacterStatus : MonoBehaviour {
 	public void regenStamina(int st)
 	{
 		stamina =stamina + st;
+		if (stamina + st >= maxStamina)
+			stamina = maxStamina;
+		else
+			stamina += st;
+
 		staminaSlider.value = stamina;
 		SPTextInfo.text = stamina + "/" + maxStamina;
 	}
 
 	public void regenHealth(int he)
 	{
-		health = health + he;
+		if (health + he > fullHealth) {
+			health = health + he;
+		} else
+			health = fullHealth;
+
 		healthSlider.value = health;
 		HPTextInfo.text = health + "/" + fullHealth;
 	}
