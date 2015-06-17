@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour {
 
 	public List<Item> inventory= new List<Item>();
 	public List<Item> slotItems= new List<Item>();
+	public List<Item> fastItems= new List<Item>();
 	public int slotsX,slotsY;
 	public bool show=false;
 	private string currentToolTip;
@@ -23,6 +24,10 @@ public class Inventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		fastItems.Add (new Item());
+		fastItems.Add (new Item());
+
 		matrix = Matrix4x4.TRS (Vector3.zero, Quaternion.identity,new  Vector3(Screen.width/virtualWidth, Screen.height/virtualHeight, 1.0f));
 		for (int i=0; i<(slotsX * slotsY); i++) {
 			//inventory.Add (new Item());
@@ -57,9 +62,13 @@ public class Inventory : MonoBehaviour {
 	{
 		int i = 0;
 		Event e = Event.current;
+		GUI.matrix = matrix;
+
+		GUI.Box (new Rect(1700,980,70,70),"");
+		GUI.Box (new Rect(1780,980,70,70),"");
 
 		if (show) {
-			GUI.matrix = matrix;
+
 			GUI.Box (new Rect(650,250,500,500),"inventory");
 			for (int x=0;x<slotsX;x++)
 			{
