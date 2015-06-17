@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 99f79712064de1b4ab13074a56b859e5
-timeCreated: 1434536228
+guid: 81e3dd4f889290d48bdcae2c09d29ba2
+timeCreated: 1434561795
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -225,7 +225,41 @@ ModelImporter:
     4300022: Torus
     4300024: bracelete.003
     4300026: bracelete.002
-    7400000: SpecialAttack1
+    7400000: Lamp|cintoAction
+    7400002: Lamp|SphereAction
+    7400004: Camera|cintoAction
+    7400006: Camera|SphereAction
+    7400008: esqueleto|cintoAction
+    7400010: SpecialAttack2
+    7400012: esqueleto|SphereAction
+    7400014: corpo|cintoAction
+    7400016: corpo|SphereAction
+    7400018: camisola|cintoAction
+    7400020: camisola|SphereAction
+    7400022: bracelete.001|cintoAction
+    7400024: bracelete.001|SphereAction
+    7400026: bracelete|cintoAction
+    7400028: bracelete|SphereAction
+    7400030: "cal\xE7as|cintoAction"
+    7400032: "cal\xE7as|SphereAction"
+    7400034: cinto|cintoAction
+    7400036: cinto|SphereAction
+    7400038: Sphere|cintoAction
+    7400040: Sphere|SphereAction
+    7400042: chapeu|cintoAction
+    7400044: chapeu|SphereAction
+    7400046: corpo.001|cintoAction
+    7400048: corpo.001|SphereAction
+    7400050: Cylinder|cintoAction
+    7400052: Cylinder|SphereAction
+    7400054: Torus|cintoAction
+    7400056: Torus|SphereAction
+    7400058: bracelete.003|cintoAction
+    7400060: bracelete.003|SphereAction
+    7400062: bracelete.002|cintoAction
+    7400064: bracelete.002|SphereAction
+    7400066: Cube|cintoAction
+    7400068: Cube|SphereAction
     9500000: //RootNode
     13700000: bracelete
     13700002: bracelete.001
@@ -257,10 +291,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: SpecialAttack1
+      name: SpecialAttack2
       takeName: esqueleto|esqueletoAction.001
       firstFrame: 0
-      lastFrame: 28
+      lastFrame: 32
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

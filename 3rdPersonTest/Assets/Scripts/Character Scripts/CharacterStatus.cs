@@ -17,6 +17,8 @@ public class CharacterStatus : MonoBehaviour {
 
 	private int money;
 
+	private CharacterMovement cm;
+
 	
 	public Slider healthSlider;
 	public Slider staminaSlider;
@@ -62,6 +64,7 @@ public class CharacterStatus : MonoBehaviour {
 		SPTextInfo.text = stamina + "/" + maxStamina;
 
 		moneyText.text = "Money:" + money;
+		cm = gameObject.GetComponent<CharacterMovement> ();
 	}
 	
 	// Update is called once per frame
@@ -127,10 +130,16 @@ public class CharacterStatus : MonoBehaviour {
 		expSlider.value = exp;
 	}
 	
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerStay(Collider other) {
 		//Debug.Log (other.tag);
 		if (other.tag == "Enemy") {
-			other.GetComponent<EnemyHealth>().takeDamage(10);
+			if(cm.getMove()==5){//attack
+				other.GetComponent<EnemyHealth>().takeDamage(10);
+			}else if(cm.getMove()==6){//special attack
+				other.GetComponent<EnemyHealth>().takeDamage(50);
+			}else if(cm.getMove()==7){//special attack
+				other.GetComponent<EnemyHealth>().takeDamage(70);
+			}
 		}
 	}
 }
