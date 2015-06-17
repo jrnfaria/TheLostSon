@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Threading;
 
 public class CharacterMovement : MonoBehaviour {
 	
-	public float speed = 15.0F;
-	public float jumpSpeed = 8.0F;
+	public float speed = 0;
 	public float gravity = 20.0F;
 	public Animator anim;
 
@@ -19,9 +19,9 @@ public class CharacterMovement : MonoBehaviour {
 	}
 	
 	void Update() {
-
 		if (controller.isGrounded) {
 			anim.SetInteger("move",0);
+
 			if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) ||Input.GetKey(KeyCode.D)){
 				if(Input.GetKey(KeyCode.LeftShift)){
 					anim.SetInteger("move",2);//run
@@ -42,20 +42,18 @@ public class CharacterMovement : MonoBehaviour {
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
 			moveDirection = transform.TransformDirection(moveDirection);
 
-			moveDirection *= speed;
-			
 			if (Input.GetButton ("Jump") && anim.GetInteger("move")==2) {
 				anim.SetInteger ("move", 4);//BigJump
 			}else if (Input.GetButton ("Jump") && (anim.GetInteger("move")==0 || anim.GetInteger("move")==1)) {
 				anim.SetInteger ("move", 3);//jump
 			}
+			attack ();
+			moveDirection *= speed;
 		}
-		
 		moveDirection.y -= gravity * Time.deltaTime;
 		
 		controller.Move(moveDirection * Time.deltaTime);
 
-		attack ();
 	}
 
 	void attack(){
