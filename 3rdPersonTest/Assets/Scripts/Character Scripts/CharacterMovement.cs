@@ -63,12 +63,24 @@ public class CharacterMovement : MonoBehaviour {
 
 	void attack(){
 		if (Input.GetMouseButtonDown(0)) {//left click
+			canIdleAttack=true;
 			anim.SetInteger ("move", 5);//normal attack
 		}else if (Input.GetMouseButtonDown(1)) {//right click
 			anim.SetInteger ("move", 6);//normal attack
+			canIdleAttack=true;
 		}else if (Input.GetMouseButtonDown(2)) {//right click
 			anim.SetInteger ("move", 7);//normal attack
+			canIdleAttack=true;
 		}
+		if(canIdleAttack && anim.GetInteger("move")!=5 && anim.GetInteger("move")!=6 && anim.GetInteger("move")!=7){
+			anim.SetInteger ("move", 10);//idleAttack
+			Invoke ("idleAttack", 5.0f);
+		}
+	}
+
+	void idleAttack(){
+		canIdleAttack=false;
+		anim.SetInteger ("move", 0);//idle
 	}
 
 	public int getMove(){
