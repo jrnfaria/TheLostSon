@@ -94,6 +94,20 @@ public class CharacterStatus : MonoBehaviour {
 		}
 	}
 
+	public void regenStamina(int st)
+	{
+		stamina =stamina + st;
+		staminaSlider.value = stamina;
+		SPTextInfo.text = stamina + "/" + maxStamina;
+	}
+
+	public void regenHealth(int he)
+	{
+		health = health + he;
+		healthSlider.value = health;
+		HPTextInfo.text = health + "/" + fullHealth;
+	}
+
 	public void addMoney(int mn)
 	{
 		money += mn;

@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: 32cdefb54e218f445886221122ebc043
+timeCreated: 1434537562
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: asa.L
+    100004: asa.L_end
+    100006: asa.R
+    100008: asa.R_end
+    100010: backleg.L
+    100012: backleg.L_end
+    100014: backleg.R
+    100016: backleg.R_end
+    100018: Camera
+    100020: cauda
+    100022: cauda_end
+    100024: //RootNode
+    100026: dragon
+    100028: head
+    100030: head_end
+    100032: leg.L
+    100034: leg.L_end
+    100036: leg.R
+    100038: leg.R_end
+    100040: Sun
+    100042: torso
+    100044: torso.2
+    100046: upperbackleg.L
+    100048: upperbackleg.R
+    100050: upperleg.L
+    100052: upperleg.R
+    400000: Armature
+    400002: asa.L
+    400004: asa.L_end
+    400006: asa.R
+    400008: asa.R_end
+    400010: backleg.L
+    400012: backleg.L_end
+    400014: backleg.R
+    400016: backleg.R_end
+    400018: Camera
+    400020: cauda
+    400022: cauda_end
+    400024: //RootNode
+    400026: dragon
+    400028: head
+    400030: head_end
+    400032: leg.L
+    400034: leg.L_end
+    400036: leg.R
+    400038: leg.R_end
+    400040: Sun
+    400042: torso
+    400044: torso.2
+    400046: upperbackleg.L
+    400048: upperbackleg.R
+    400050: upperleg.L
+    400052: upperleg.R
+    4300000: dragon
+    7400000: Sun|dragonAction
+    7400002: Camera|dragonAction
+    7400004: fly
+    7400006: Armature|dragonAction
+    7400008: dragon|dragonAction
+    9500000: //RootNode
+    13700000: dragon
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: fly
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 111
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/asa.L
+        weight: 1
+      - path: Armature/asa.L/asa.L_end
+        weight: 1
+      - path: Armature/asa.R
+        weight: 1
+      - path: Armature/asa.R/asa.R_end
+        weight: 1
+      - path: Armature/cauda
+        weight: 1
+      - path: Armature/cauda/cauda_end
+        weight: 1
+      - path: Armature/torso.2
+        weight: 1
+      - path: Armature/torso.2/torso
+        weight: 1
+      - path: Armature/torso.2/torso/head
+        weight: 1
+      - path: Armature/torso.2/torso/head/head_end
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.L
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.L/leg.L
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.L/leg.L/leg.L_end
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.R
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.R/leg.R
+        weight: 1
+      - path: Armature/torso.2/torso/upperleg.R/leg.R/leg.R_end
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.L
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.L/backleg.L
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.L/backleg.L/backleg.L_end
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.R
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.R/backleg.R
+        weight: 1
+      - path: Armature/torso.2/upperbackleg.R/backleg.R/backleg.R_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: dragon
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
