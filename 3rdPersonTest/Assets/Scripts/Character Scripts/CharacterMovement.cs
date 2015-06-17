@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour {
 	public Animator anim;
 
 	private float horizontal, vertical;
+	private bool canIdleAttack=false;
 	
 	private CharacterController controller ;
 	private Vector3 moveDirection = Vector3.zero;
