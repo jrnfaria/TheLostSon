@@ -16,6 +16,7 @@ public class Explosion : MonoBehaviour {
 	void Explode() {
 		if(explode){
 			Instantiate (explosionPrefab, this.transform.position, Quaternion.identity);
+			GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>().takeDamage(20);
 			Destroy (gameObject);
 			Destroy (transform.parent.gameObject, 0.2f);
 		}
