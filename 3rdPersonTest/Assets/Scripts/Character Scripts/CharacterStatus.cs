@@ -28,7 +28,10 @@ public class CharacterStatus : MonoBehaviour {
 	public Text HPTextInfo;
 	public Text SPTextInfo;
 	//public Text moneyText;
-	public int canAttack=0;
+	private int canAttack=0;
+	public int attackDamage = 5;
+	public int specialAttackDamage = 20;
+	public int specialAttack2Damage = 50;
 
 	
 	
@@ -149,14 +152,14 @@ public class CharacterStatus : MonoBehaviour {
 	}
 
 	public void CanAttack(){
-		canAttack = 5;
+		canAttack = attackDamage;
 	}
 	
 	public void CanAttack1(){
-		canAttack = 20;
+		canAttack = specialAttackDamage;
 	}
 	
 	public void CanAttack2(){
-		canAttack = 50;
+		canAttack = specialAttack2Damage;
 	}
 }
