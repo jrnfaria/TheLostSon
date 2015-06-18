@@ -32,10 +32,6 @@ public class CharacterMovement : MonoBehaviour {
 					anim.SetInteger("move",1);//walk
 					speed = 5.0f;
 				}
-			}else if(Input.GetKey(KeyCode.Q)){
-				idleAttack ();
-				canIdleAttack=true;
-				anim.SetInteger("move",9);//dodgeLeft
 			}else if(Input.GetKey(KeyCode.E)){
 				idleAttack ();
 				canIdleAttack=true;
