@@ -20,14 +20,20 @@ public class QuestRange : MonoBehaviour {
 		//Debug.Log("displayedGUI = "+displayedGUI+"/ isInside = "+isInside);
 	}
 
+	void OnTriggerStay(Collider other){
+		if (other.tag == "Character") {
+			isInside = true;
+		}
+	}
+	
 	void OnTriggerEnter(Collider other){
-		if (other.name == "Tyson") {
+		if (other.tag == "Character") {
 			isInside = true;
 		}
 	}
 
 	void OnTriggerExit(Collider other){
-		if (other.name == "Tyson") {
+		if (other.tag == "Character") {
 			isInside = false;
 		}
 	}
