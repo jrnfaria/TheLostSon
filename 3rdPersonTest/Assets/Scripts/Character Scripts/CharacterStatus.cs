@@ -22,6 +22,7 @@ public class CharacterStatus : MonoBehaviour {
 	
 	public Slider healthSlider;
 	public Slider staminaSlider;
+	public Slider expSlider;
 
 	//public Text lvlText;
 	public Text HPTextInfo;
@@ -47,6 +48,9 @@ public class CharacterStatus : MonoBehaviour {
 		//sliders
 		healthSlider.maxValue = fullHealth;
 		healthSlider.value = health;
+
+		expSlider.maxValue = 100;
+		expSlider.value = exp;
 		
 		staminaSlider.maxValue = stamina;
 		staminaSlider.value = stamina;
@@ -70,6 +74,7 @@ public class CharacterStatus : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.C)) {
 			takeDamage(10);
 			spendStamina(10);
+			addExp(10);
 			addMoney(100);
 		}
 	}
@@ -126,11 +131,11 @@ public class CharacterStatus : MonoBehaviour {
 		while(exp >= maxExp){
 			lvl++;
 			//lvlText.text = "Lvl:" + lvl;
-			exp -= 100;
-			maxExp=maxExp*lvl;
-		
+			exp = 0;
+			maxExp=(int)(maxExp*lvl);
+			expSlider.maxValue=maxExp;
 		}
-
+		expSlider.value = exp;
 	}
 	
 	void OnTriggerStay(Collider other) {
