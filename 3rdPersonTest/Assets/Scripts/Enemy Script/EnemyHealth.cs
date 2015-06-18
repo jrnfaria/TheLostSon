@@ -40,13 +40,16 @@ public class EnemyHealth : MonoBehaviour
 
 			}
 
+			if(GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>()!=null){
+				Debug.Log("Entrei");
+			}
+			
 			Destroy (this.transform.parent.gameObject);
 			GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>().addExp(10);
 			KillQuest quest = GameObject.FindGameObjectWithTag("Character").GetComponent<KillQuest>();
 			if(quest.getNumber() !=0 && quest.getMonster()==gameObject.name){
 				quest.setNumber(quest.getNumber()-1);
 			}
-
 		}
 
 		healthRatio = health / (float)fullHealth;

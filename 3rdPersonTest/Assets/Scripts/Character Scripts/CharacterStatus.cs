@@ -28,6 +28,7 @@ public class CharacterStatus : MonoBehaviour {
 	public Text HPTextInfo;
 	public Text SPTextInfo;
 	//public Text moneyText;
+	public int canAttack=0;
 
 	
 	
@@ -139,17 +140,23 @@ public class CharacterStatus : MonoBehaviour {
 	}
 	
 	void OnTriggerStay(Collider other) {
-		
-		//Debug.Log (other.tag);
 		if (other.tag == "Enemy") {
-			Debug.Log (cm.getMove());
-			if(cm.getMove()==5){//attack
-				other.GetComponent<EnemyHealth>().takeDamage(10);
-			}else if(cm.getMove()==6){//special attack
-				other.GetComponent<EnemyHealth>().takeDamage(50);
-			}else if(cm.getMove()==7){//special attack
-				other.GetComponent<EnemyHealth>().takeDamage(70);
+			if (canAttack!=0) {
+				other.GetComponent<EnemyHealth> ().takeDamage (canAttack);
+				canAttack=0;
 			}
 		}
+	}
+
+	public void CanAttack(){
+		canAttack = 5;
+	}
+	
+	public void CanAttack1(){
+		canAttack = 20;
+	}
+	
+	public void CanAttack2(){
+		canAttack = 50;
 	}
 }
