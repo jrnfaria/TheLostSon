@@ -5,7 +5,7 @@
 	
 	<startconditions>
 		<startcondition type="level">
-			<questId>1</questId>
+			<questId>2</questId>
 		</startcondition>
 		<startcondition type="previousquest">
 			<questId>1</questId>
@@ -13,14 +13,13 @@
 	</startconditions>
 	
 	<description>
-Hi, Are you looking for your father?\n
-Mmmm, I see...You need trainning first. You are lucky, I'm the best swordsman in the world! ah aha ah\n
-Let's start. Kill 10 turtles for now. They are easy to kill, so I think that it's a good start.\n
-Good luck!!!
+Ohh my god, you are good. I never thought you can do it.
+Ok let's try something more dificult. Kill 10 turtles for now.
+Thank you!
 	</description>
 	
 	<objective type="turtle monster">
-		<quantity>5</quantity>
+		<quantity>10</quantity>
 	</objective>
 	
 	<reward>
