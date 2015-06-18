@@ -23,10 +23,10 @@ public class CharacterStatus : MonoBehaviour {
 	public Slider healthSlider;
 	public Slider staminaSlider;
 
-	public Text lvlText;
+	//public Text lvlText;
 	public Text HPTextInfo;
 	public Text SPTextInfo;
-	public Text moneyText;
+	//public Text moneyText;
 
 	
 	
@@ -52,13 +52,14 @@ public class CharacterStatus : MonoBehaviour {
 		staminaSlider.value = stamina;
 
 	
-		lvlText.text = "Lvl:" + lvl;
+//		lvlText.text = "Lvl:" + lvl;
 
 		HPTextInfo.text = health + "/" + fullHealth;
 		SPTextInfo.text = stamina + "/" + maxStamina;
 
-		moneyText.text = "Money:" + money;
-		cm = gameObject.GetComponent<CharacterMovement> ();
+		//moneyText.text = "Money:" + money;
+		cm = GetComponent<CharacterMovement> ();
+		
 	}
 	
 	// Update is called once per frame
@@ -117,14 +118,14 @@ public class CharacterStatus : MonoBehaviour {
 	public void addMoney(int mn)
 	{
 		money += mn;
-		moneyText.text = "Money:" + money;
+		//moneyText.text = "Money:" + money;
 	}
 
 	public void addExp(int xp){
 		exp += xp;
 		while(exp >= maxExp){
 			lvl++;
-			lvlText.text = "Lvl:" + lvl;
+			//lvlText.text = "Lvl:" + lvl;
 			exp -= 100;
 			maxExp=maxExp*lvl;
 		
@@ -133,8 +134,10 @@ public class CharacterStatus : MonoBehaviour {
 	}
 	
 	void OnTriggerStay(Collider other) {
+		
 		//Debug.Log (other.tag);
 		if (other.tag == "Enemy") {
+			Debug.Log (cm.getMove());
 			if(cm.getMove()==5){//attack
 				other.GetComponent<EnemyHealth>().takeDamage(10);
 			}else if(cm.getMove()==6){//special attack

@@ -87,7 +87,7 @@ public class EnemyAggro : MonoBehaviour {
 			CalculatePatrolPoint ();
 	}
 
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerStay(Collider other) {
 		if (other.transform.tag == "Character") {
 			if(attacking==false)
 			{
