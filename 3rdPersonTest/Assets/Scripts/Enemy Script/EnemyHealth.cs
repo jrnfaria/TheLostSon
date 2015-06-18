@@ -54,5 +54,9 @@ public class EnemyHealth : MonoBehaviour
 
 		healthRatio = health / (float)fullHealth;
 	}
+
+	void OnDestroy() {
+		GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>().dropSystem();
+	}
 }
 
