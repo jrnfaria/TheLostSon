@@ -15,7 +15,7 @@
 	<description>
 Hi, Are you looking for your father?\n
 Mmmm, I see...You need trainning first. You are lucky, I'm the best swordsman in the world! ah aha ah\n
-Let's start. Kill 10 turtles for now. They are easy to kill, so I think that it's a good start.\n
+Let's start. Kill 5 turtles for now. They are easy to kill, so I think that it's a good start.\n
 Good luck!!!
 	</description>
 	
@@ -25,6 +25,6 @@ Good luck!!!
 	
 	<reward>
     	<money>1000</money>
-    	<exp>999</exp>
+    	<exp>200</exp>
     </reward>
 </quest>

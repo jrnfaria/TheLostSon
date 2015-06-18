@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <quest type="kill">
 
-	<id>1</id>
+	<id>2</id>
 	
 	<startconditions>
 		<startcondition type="level">
@@ -24,6 +24,6 @@ Thank you!
 	
 	<reward>
     	<money>1000</money>
-    	<exp>999</exp>
+    	<exp>400</exp>
     </reward>
 </quest>

@@ -56,7 +56,7 @@ public class XmlReader : MonoBehaviour {
 
 		//read xml
 		var serializer = new XmlSerializer (typeof(Container));
-		var stream = new FileStream (Application.dataPath + "/QuestsList/"+"Quest 1"+".xml", FileMode.Open);
+		var stream = new FileStream (Application.dataPath + "/QuestsList/"+name+".xml", FileMode.Open);
 		container = serializer.Deserialize (stream) as Container;
 		stream.Close ();
 

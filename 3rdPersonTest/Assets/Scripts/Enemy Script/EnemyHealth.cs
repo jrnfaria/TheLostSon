@@ -39,10 +39,6 @@ public class EnemyHealth : MonoBehaviour
 				Destroy (healthSlider.gameObject);
 
 			}
-
-			if(GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>()!=null){
-				Debug.Log("Entrei");
-			}
 			
 			Destroy (this.transform.parent.gameObject);
 			GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>().addExp(10);

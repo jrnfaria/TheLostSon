@@ -16,16 +16,23 @@ public class QuestReader : MonoBehaviour {
 	private objective obj;
 	private reward rew;
 
+	public int quest=1;
+
 	// Use this for initialization
 	void Start () {
 	}
 
 	void Awake(){
 		
+		read (quest);
+
+	}
+
+	public void read(int quest){
 		xml = this.GetComponent<XmlReader> ();
 		
 		try {
-			xml.read ("Quest " + 1);
+			xml.read ("Quest " + quest);
 		} catch (FileNotFoundException) {
 		}
 		
@@ -42,19 +49,18 @@ public class QuestReader : MonoBehaviour {
 		//get description
 		description = xml.container.description;
 		//Debug.Log ("description = "+description);
-
+		
 		//get quest type
 		questType = xml.container.type;
 		//Debug.Log ("questType = "+questType);
-
+		
 		//get objectives
 		obj = xml.container.obj;
 		//Debug.Log ("Objective type = "+obj.type+"/"+obj.quantity);
-
+		
 		//get money
 		rew = xml.container.rew;
 		//Debug.Log ("money = "+rew.money +"/exp = "+rew.exp);
-
 	}
 	
 	// Update is called once per frame
@@ -84,5 +90,10 @@ public class QuestReader : MonoBehaviour {
 
 	public reward getReward(){
 		return rew;
+	}
+
+	public int nextQuest(){
+		quest++;
+		return quest;
 	}
 }

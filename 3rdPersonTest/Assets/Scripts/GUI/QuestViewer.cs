@@ -94,7 +94,7 @@ public class QuestViewer : MonoBehaviour {
 		GUI.EndScrollView();
 
 		if (questReader.getQuestType () == "kill") {
-			GUI.TextField (new Rect (280, 600, 200, 25), "Enemies missing : " + ((KillQuest)quest).getKilledNum ()+"/"+((KillQuest)quest).getTotalNum());
+			GUI.TextField (new Rect (280, 600, 220, 25), "Enemies missing : " + ((KillQuest)quest).getKilledNum ()+"/"+((KillQuest)quest).getTotalNum());
 		}
 		
 		string reward="Reward\n\nMoney:"+questReader.getReward().money+"\nExperience:"+questReader.getReward().exp;
@@ -119,7 +119,7 @@ public class QuestViewer : MonoBehaviour {
 		GUI.EndScrollView();
 		
 		if (questReader.getQuestType () == "kill") {
-			GUI.TextField (new Rect (280, 600, 200, 25), "Enemies missing : " + ((KillQuest)quest).getKilledNum ()+"/"+((KillQuest)quest).getTotalNum());
+			GUI.TextField (new Rect (280, 600, 220, 25), "Enemies missing : " + ((KillQuest)quest).getKilledNum ()+"/"+((KillQuest)quest).getTotalNum());
 		}
 		
 		string reward="Reward\n\nMoney:"+questReader.getReward().money+"\nExperience:"+questReader.getReward().exp;
@@ -127,8 +127,17 @@ public class QuestViewer : MonoBehaviour {
 		
 		//Accept button
 		if (GUI.Button (new Rect (280, 770, 160, 40), "Complete")) {
-			questRange.setDisplayedGUI (false);
-			GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>().addExp(questReader.getReward().exp);
+			if (questReader.getQuestType () == "kill" && ((KillQuest)quest).getKilledNum()==((KillQuest)quest).getTotalNum()) {
+				questRange.setDisplayedGUI (false);
+				GameObject.FindGameObjectWithTag("Character").GetComponent<CharacterStatus>().addExp(questReader.getReward().exp);
+				questReader.read(questReader.nextQuest());
+				questWasAccepted=false;
+			}
+		}
+
+		//Cancel button
+		if (GUI.Button (new Rect (460, 770, 160, 40), "Cancel")) {
+			questRange.setDisplayedGUI(false);
 		}
 	}
 
