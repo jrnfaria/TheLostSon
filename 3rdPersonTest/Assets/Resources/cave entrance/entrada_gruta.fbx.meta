@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1d711ffccf04754489549a2a7c2997bf
-timeCreated: 1434642431
+guid: 8d700df462993f44f8b5e5f479d95925
+timeCreated: 1434646477
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -151,7 +151,7 @@ ModelImporter:
     4300054: rect 2.001
   materials:
     importMaterials: 1
-    materialName: 1
+    materialName: 0
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
