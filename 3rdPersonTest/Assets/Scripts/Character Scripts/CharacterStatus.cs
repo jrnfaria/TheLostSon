@@ -85,6 +85,9 @@ public class CharacterStatus : MonoBehaviour {
 		health -= dmg;
 		healthSlider.value = health;
 		HPTextInfo.text = health + "/" + fullHealth;
+
+		if(health<=0)
+			Application.LoadLevel (1);
 	}
 	
 	public void spendStamina(int sta)
