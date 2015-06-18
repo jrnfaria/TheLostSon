@@ -14,6 +14,7 @@ public class QuestViewer : MonoBehaviour {
 	private float virtualWidth = 1920.0f;
 	private float virtualHeight = 1080.0f;
 	Matrix4x4 matrix;
+	public GUISkin customSkin;
 
 	// Use this for initialization
 	void Start () {
@@ -65,6 +66,7 @@ public class QuestViewer : MonoBehaviour {
 
 	public void createStartQuestGUI(){
 		GUI.matrix = matrix;
+		GUI.skin = customSkin;
 
 		// Make a background box
 		GUI.Box (new Rect (100, 200, 400, 600), "\nQuest "+questReader.getQuestId());
@@ -93,6 +95,7 @@ public class QuestViewer : MonoBehaviour {
 
 	public void createInfoQuestGUI(){
 		GUI.matrix = matrix;
+		GUI.skin = customSkin;
 		// Make a background box
 		GUI.Box (new Rect (50, 50, 200, 400), "\nQuest "+questReader.getQuestId());
 		
@@ -121,6 +124,7 @@ public class QuestViewer : MonoBehaviour {
 	
 	public void createEndQuestGUI(){
 		GUI.matrix = matrix;
+		GUI.skin = customSkin;
 		// Make a background box
 		GUI.Box (new Rect (50, 50, 200, 400), "\nQuest "+questReader.getQuestId());
 		
