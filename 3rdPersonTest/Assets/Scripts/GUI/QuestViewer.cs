@@ -65,6 +65,7 @@ public class QuestViewer : MonoBehaviour {
 
 	public void createStartQuestGUI(){
 		GUI.matrix = matrix;
+
 		// Make a background box
 		GUI.Box (new Rect (100, 200, 400, 600), "\nQuest "+questReader.getQuestId());
 		

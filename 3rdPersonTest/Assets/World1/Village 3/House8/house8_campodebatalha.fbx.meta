@@ -1,0 +1,164 @@
+fileFormatVersion: 2
+guid: 1e7e09b9d4828f247b7242d47f0ed81f
+timeCreated: 1434621570
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Cube.005
+    100004: //RootNode
+    100006: rect 2
+    100008: rect 2.001
+    100010: rect 2.002
+    100012: rect 2.003
+    100014: rect 2.004
+    100016: rect 2.005
+    100018: rect 2.006
+    100020: rect 2.007
+    100022: rect 2.008
+    100024: rect 2.009
+    100026: rect 2.010
+    100028: rect 2.011
+    100030: rect 2.012
+    100032: rect 2.013
+    100034: rect 2.014
+    100036: rect 2.015
+    100038: rect 2.016
+    100040: rect 2.017
+    400000: Camera
+    400002: Cube.005
+    400004: //RootNode
+    400006: rect 2
+    400008: rect 2.001
+    400010: rect 2.002
+    400012: rect 2.003
+    400014: rect 2.004
+    400016: rect 2.005
+    400018: rect 2.006
+    400020: rect 2.007
+    400022: rect 2.008
+    400024: rect 2.009
+    400026: rect 2.010
+    400028: rect 2.011
+    400030: rect 2.012
+    400032: rect 2.013
+    400034: rect 2.014
+    400036: rect 2.015
+    400038: rect 2.016
+    400040: rect 2.017
+    2300000: Cube.005
+    2300002: rect 2
+    2300004: rect 2.001
+    2300006: rect 2.002
+    2300008: rect 2.003
+    2300010: rect 2.004
+    2300012: rect 2.005
+    2300014: rect 2.006
+    2300016: rect 2.007
+    2300018: rect 2.008
+    2300020: rect 2.009
+    2300022: rect 2.010
+    2300024: rect 2.011
+    2300026: rect 2.012
+    2300028: rect 2.013
+    2300030: rect 2.014
+    2300032: rect 2.015
+    2300034: rect 2.016
+    2300036: rect 2.017
+    3300000: Cube.005
+    3300002: rect 2
+    3300004: rect 2.001
+    3300006: rect 2.002
+    3300008: rect 2.003
+    3300010: rect 2.004
+    3300012: rect 2.005
+    3300014: rect 2.006
+    3300016: rect 2.007
+    3300018: rect 2.008
+    3300020: rect 2.009
+    3300022: rect 2.010
+    3300024: rect 2.011
+    3300026: rect 2.012
+    3300028: rect 2.013
+    3300030: rect 2.014
+    3300032: rect 2.015
+    3300034: rect 2.016
+    3300036: rect 2.017
+    4300000: Cube.005
+    4300002: rect 2
+    4300004: rect 2.001
+    4300006: rect 2.002
+    4300008: rect 2.003
+    4300010: rect 2.004
+    4300012: rect 2.005
+    4300014: rect 2.006
+    4300016: rect 2.007
+    4300018: rect 2.008
+    4300020: rect 2.009
+    4300022: rect 2.010
+    4300024: rect 2.011
+    4300026: rect 2.012
+    4300028: rect 2.013
+    4300030: rect 2.014
+    4300032: rect 2.015
+    4300034: rect 2.016
+    4300036: rect 2.017
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
