@@ -13,11 +13,10 @@ public class CharacterStatus : MonoBehaviour {
 	private int exp;
 	private int maxExp;
 
+	public Text lvlText;
 	private int lvl;
 
 	private int money;
-
-	private CharacterMovement cm;
 
 	
 	public Slider healthSlider;
@@ -59,6 +58,8 @@ public class CharacterStatus : MonoBehaviour {
 		staminaSlider.maxValue = stamina;
 		staminaSlider.value = stamina;
 
+		lvlText.text=lvl.ToString();
+
 	
 //		lvlText.text = "Lvl:" + lvl;
 
@@ -66,15 +67,11 @@ public class CharacterStatus : MonoBehaviour {
 		SPTextInfo.text = stamina + "/" + maxStamina;
 
 		//moneyText.text = "Money:" + money;
-		cm = GetComponent<CharacterMovement> ();
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		
-		
 		if (Input.GetKeyUp (KeyCode.C)) {
 			takeDamage(10);
 			spendStamina(10);
@@ -92,7 +89,7 @@ public class CharacterStatus : MonoBehaviour {
 	
 	public void spendStamina(int sta)
 	{
-		if (stamina - sta > 0) {
+		if (stamina - sta >= 0) {
 			stamina -= sta;
 			staminaSlider.value = stamina;
 			SPTextInfo.text = stamina + "/" + maxStamina;
@@ -115,7 +112,7 @@ public class CharacterStatus : MonoBehaviour {
 
 	public void regenHealth(int he)
 	{
-		if (health + he > fullHealth) {
+		if (health + he <= fullHealth) {
 			health = health + he;
 		} else
 			health = fullHealth;
@@ -138,6 +135,22 @@ public class CharacterStatus : MonoBehaviour {
 			exp = 0;
 			maxExp=(int)(maxExp*lvl);
 			expSlider.maxValue=maxExp;
+			lvlText.text=lvl.ToString();
+			fullHealth=fullHealth+50;
+			maxStamina=maxStamina+50;
+			health=fullHealth;
+			stamina=maxStamina;
+
+			healthSlider.maxValue=fullHealth;
+			healthSlider.value=fullHealth;
+
+			staminaSlider.maxValue=maxStamina;
+			staminaSlider.value=maxStamina;
+
+			HPTextInfo.text = health + "/" + fullHealth;
+			SPTextInfo.text = stamina + "/" + maxStamina;
+
+
 		}
 		expSlider.value = exp;
 	}

@@ -6,7 +6,7 @@ public class VillagerMovement : MonoBehaviour {
 	private bool inDestiny;
 	private Vector3 initialPosition;
 	private NavMeshAgent nav; 
-	private Animator anim;
+
 	private Vector3 patrolPosition;
 
 	public int patrolRange;
@@ -16,7 +16,6 @@ public class VillagerMovement : MonoBehaviour {
 		inDestiny = false;
 		initialPosition = transform.position;
 		nav = GetComponent<NavMeshAgent>();
-		anim=GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
