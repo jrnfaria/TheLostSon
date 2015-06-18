@@ -32,10 +32,6 @@ public class CharacterMovement : MonoBehaviour {
 					anim.SetInteger("move",1);//walk
 					speed = 5.0f;
 				}
-			}else if(Input.GetKey(KeyCode.Q)){
-				idleAttack ();
-				canIdleAttack=true;
-				anim.SetInteger("move",9);//dodgeLeft
 			}else if(Input.GetKey(KeyCode.E)){
 				idleAttack ();
 				canIdleAttack=true;
@@ -53,8 +49,10 @@ public class CharacterMovement : MonoBehaviour {
 			moveDirection = transform.TransformDirection(moveDirection);
 
 			if (Input.GetButton ("Jump") && anim.GetInteger("move")==2) {
+				idleAttack ();
 				anim.SetInteger ("move", 4);//BigJump
 			}else if (Input.GetButton ("Jump") && (anim.GetInteger("move")==0 || anim.GetInteger("move")==1)) {
+				idleAttack ();
 				anim.SetInteger ("move", 3);//jump
 			}
 			attack ();

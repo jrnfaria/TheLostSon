@@ -69,26 +69,26 @@ public class QuestViewer : MonoBehaviour {
 		GUI.skin = customSkin;
 
 		// Make a background box
-		GUI.Box (new Rect (100, 200, 400, 600), "\nQuest "+questReader.getQuestId());
+		GUI.Box (new Rect (250, 250, 400, 600), "\nQuest "+questReader.getQuestId());
 		
 		//Quest Description
 		string questDescr =questReader.getDescription();
-		scrollPosition = GUI.BeginScrollView (new Rect(130, 270, 340, 300), scrollPosition, new Rect(0, 0, 320, 310));
+		scrollPosition = GUI.BeginScrollView (new Rect(280, 320, 340, 300), scrollPosition, new Rect(0, 0, 320, 310));
 		GUI.TextField (new Rect (0, 0, 320, 310), questDescr,"Label");
 		GUI.EndScrollView();
 		
 		string reward="Reward\n\nMoney:"+questReader.getReward().money+"\nExperience:"+questReader.getReward().exp;
-		GUI.TextField (new Rect (130, 600, 340, 100), reward);
+		GUI.TextField (new Rect (280, 650, 340, 100), reward);
 		
 		//Accept button
-		if (GUI.Button (new Rect (130, 720, 160, 40), "Accept")) {
+		if (GUI.Button (new Rect (280, 770, 160, 40), "Accept")) {
 			questRange.setDisplayedGUI(false);
 			questWasAccepted=true;
 			initQuest();
 		}
 		
 		//Reject button
-		if (GUI.Button (new Rect (310, 720, 160, 40), "Reject")) {
+		if (GUI.Button (new Rect (460, 770, 160, 40), "Reject")) {
 			questRange.setDisplayedGUI(false);
 		}
 	}
