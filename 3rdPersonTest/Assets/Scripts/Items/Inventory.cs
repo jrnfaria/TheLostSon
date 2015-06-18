@@ -6,7 +6,6 @@ public class Inventory : MonoBehaviour {
 
 	public List<Item> inventory= new List<Item>();
 	public List<Item> slotItems= new List<Item>();
-	public List<Item> fastItems= new List<Item>();
 	public int slotsX,slotsY;
 	public bool show=false;
 	private string currentToolTip;
@@ -79,6 +78,14 @@ public class Inventory : MonoBehaviour {
 
 	void shortcutOptions(Rect slotRect,int i,Event e)
 	{
+		if(slotItems[i].itemAmount>0)
+		{
+			Color c = GUI.backgroundColor;
+			GUI.backgroundColor = Color.clear;
+			GUI.Label(new Rect(slotRect.x,slotRect.y,20,20),slotItems[i].itemAmount.ToString());
+			GUI.backgroundColor=c;
+		}
+
 		GUI.Box (slotRect,slotItems[i].image);
 		
 		if(slotRect.Contains(e.mousePosition)&&!dragging && slotItems[i].itemName !=null && slotItems[i].itemName!="")
@@ -96,8 +103,8 @@ public class Inventory : MonoBehaviour {
 			//use item
 			else if(e.type==EventType.mouseUp)
 			{
-				slotItems[i].effect();
-				if(slotItems[i].type==Item.itemType.Potion)
+				bool worked=slotItems[i].effect();
+				if(slotItems[i].type==Item.itemType.Potion&&worked)
 				{
 					slotItems[i].itemAmount-=1;
 					if(slotItems[i].itemAmount<=0)
@@ -245,7 +252,24 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
+	public void dropSystem()
+	{
+		if (Random.Range (0, 1) == 0) {
+			int index = Random.Range (0, inventory.Count);
+			while (inventory[index].type!=Item.itemType.Potion) {
+				index = Random.Range (0, inventory.Count);
+			}
 
+			for (int i=0; i<slotItems.Count; i++) {
+
+				if (slotItems [i].itemName == inventory [index].itemName) {
+					slotItems [i].itemAmount++;
+				}
+			}
+		}
+
+
+	}
 
 
 }

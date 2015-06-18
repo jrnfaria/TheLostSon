@@ -25,12 +25,14 @@ public class Item{
 	public GameObject dragon;
 	private bool invoked=false;
 
-	public void effect()
+	public bool effect()
 	{
 		if (hpRegen != 0 || staminaRegen != 0) {
 			CharacterStatus hero = GameObject.FindGameObjectWithTag ("Character").GetComponent<CharacterStatus> ();
+
 			hero.regenHealth (hpRegen);
 			hero.regenStamina (staminaRegen);
+
 		} else if (dragon!=null) {
 			if(invoked)
 			{
@@ -46,5 +48,6 @@ public class Item{
 				invoked=true;
 			}
 		}
+		return true;
 	}
 }
