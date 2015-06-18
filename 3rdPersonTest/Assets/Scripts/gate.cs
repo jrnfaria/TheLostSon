@@ -7,8 +7,6 @@ public class gate : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		HUD = GameObject.FindGameObjectWithTag ("HUD");
-		inventory = GameObject.FindGameObjectWithTag ("Inventory");
 	}
 
 
