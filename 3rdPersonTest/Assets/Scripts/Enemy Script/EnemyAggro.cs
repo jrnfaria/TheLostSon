@@ -11,6 +11,8 @@ public class EnemyAggro : MonoBehaviour {
 	public int walkSpeed;
 	public int runSpeed;
 
+	public int damage;
+
 	public int heroDetectionRange;
 	public int patrolRange;
 
@@ -93,7 +95,7 @@ public class EnemyAggro : MonoBehaviour {
 	public void attack()
 	{
 		if(attacking)
-			hero.GetComponent<CharacterStatus>().takeDamage(20);
+			hero.GetComponent<CharacterStatus>().takeDamage(damage);
 	}
 
 	void OnTriggerExit(Collider other) {
