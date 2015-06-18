@@ -34,9 +34,11 @@ public class CharacterMovement : MonoBehaviour {
 				}
 			}else if(Input.GetKey(KeyCode.Q)){
 				idleAttack ();
+				canIdleAttack=true;
 				anim.SetInteger("move",9);//dodgeLeft
 			}else if(Input.GetKey(KeyCode.E)){
 				idleAttack ();
+				canIdleAttack=true;
 				anim.SetInteger("move",8);//dodgeRight
 			}
 			transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
@@ -66,16 +68,19 @@ public class CharacterMovement : MonoBehaviour {
 
 	void attack(){
 		if (Input.GetMouseButtonDown(0)) {//left click
+			idleAttack();
 			canIdleAttack=true;
 			anim.SetInteger ("move", 5);//normal attack
 		}else if (Input.GetMouseButtonDown(1)) {//right click
+			idleAttack();
 			anim.SetInteger ("move", 6);//Special attack 1
 			canIdleAttack=true;
 		}else if (Input.GetMouseButtonDown(2)) {//mid click
+			idleAttack();
 			anim.SetInteger ("move", 7);//Special attack 2
 			canIdleAttack=true;
 		}
-		if(canIdleAttack && anim.GetInteger("move")!=5 && anim.GetInteger("move")!=6 && anim.GetInteger("move")!=7){
+		if(canIdleAttack && anim.GetInteger("move")!=5 && anim.GetInteger("move")!=6 && anim.GetInteger("move")!=7 && anim.GetInteger("move")!=8 && anim.GetInteger("move")!=9){
 			anim.SetInteger ("move", 10);//idleAttack
 			Invoke ("idleAttack", 5.0f);
 		}
