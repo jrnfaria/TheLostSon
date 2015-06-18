@@ -18,7 +18,6 @@ public class EnemyAggro : MonoBehaviour {
 	private bool inDestiny;
 	private Vector3 initialPosition;
 
-	private bool followingHero;
 	private bool attacking;
 
 	void Start () {
@@ -32,7 +31,6 @@ public class EnemyAggro : MonoBehaviour {
 
 		patrolPosition=new Vector3();
 		inDestiny = true;
-		followingHero = false;
 		attacking = false;
 	}
 
@@ -54,7 +52,6 @@ public class EnemyAggro : MonoBehaviour {
 					if (nav.remainingDistance == 0)
 						inDestiny = true;
 				}
-				followingHero = false;
 				anim.SetBool ("chasing", false);
 				nav.speed = walkSpeed;
 			}
@@ -64,7 +61,6 @@ public class EnemyAggro : MonoBehaviour {
 	void ChaseHero()
 	{
 		nav.destination = hero.transform.position;
-		followingHero = true;
 		anim.SetBool ("chasing",true);
 	}
 
