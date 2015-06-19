@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour {
 	public int slotsX,slotsY;
 	public bool show=false;
 	private string currentToolTip;
+	public GUISkin customSkin;
 
 	//draging item
 	private bool dragging = false;
@@ -150,6 +151,7 @@ public class Inventory : MonoBehaviour {
 
 	void OnGUI()
 	{
+		GUI.skin = customSkin;
 		int i = 0;
 
 		Event e = Event.current;
