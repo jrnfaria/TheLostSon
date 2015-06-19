@@ -219,6 +219,12 @@ public class Inventory : MonoBehaviour {
 					{
 						currentToolTip = "";
 					}
+
+					//shows item description
+					if(currentToolTip!=null&&currentToolTip!="")
+					{
+						GUI.Box(new Rect(e.mousePosition.x,e.mousePosition.y,100,100),currentToolTip);
+					}
 				
 
 					if(dragging)
@@ -243,11 +249,7 @@ public class Inventory : MonoBehaviour {
 
 						}
 					}
-					//shows item description
-					if(currentToolTip!=null&&currentToolTip!="")
-					{
-						GUI.Box(new Rect(e.mousePosition.x,e.mousePosition.y,100,100),currentToolTip);
-					}
+				
 					i++;
 				}
 			}

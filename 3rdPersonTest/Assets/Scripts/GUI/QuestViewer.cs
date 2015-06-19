@@ -27,7 +27,7 @@ public class QuestViewer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.Q)) {
+		if (Input.GetKey (KeyCode.Q) && questWasAccepted) {
 			showInfoQuestMenu=true;
 		}
 	}
@@ -35,7 +35,7 @@ public class QuestViewer : MonoBehaviour {
 	void OnGUI()
 	{
 		if (questRange.isDisplayedGUI()) {
-			if(questWasAccepted){
+			if(questWasAccepted && questReader.getQuestId()!=0){
 				createEndQuestGUI();
 			}else{
 				createStartQuestGUI();
