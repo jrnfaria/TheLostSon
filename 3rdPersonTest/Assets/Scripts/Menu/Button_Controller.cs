@@ -8,6 +8,6 @@ public class Button_Controller : MonoBehaviour {
 	}
 
 	public void Start_Game(){
-		Application.LoadLevel(4);
+		Application.LoadLevel(5);
 	}
 }

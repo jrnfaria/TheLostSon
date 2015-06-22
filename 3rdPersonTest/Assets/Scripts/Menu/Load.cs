@@ -5,7 +5,7 @@ public class Load : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Application.LoadLevelAsync (1);
+		Application.LoadLevelAsync (2);
 	}
 	
 	// Update is called once per frame
