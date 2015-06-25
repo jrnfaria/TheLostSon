@@ -17,6 +17,7 @@ public class CharacterStatus : MonoBehaviour {
 	private int lvl;
 
 	private int money;
+	private bool dodging;
 
 	
 	public Slider healthSlider;
@@ -39,6 +40,7 @@ public class CharacterStatus : MonoBehaviour {
 	void Start () {
 		health = 100;
 		fullHealth = 100;
+		dodging = false;
 
 		money = 0;
 		stamina=100;
@@ -69,6 +71,11 @@ public class CharacterStatus : MonoBehaviour {
 		//moneyText.text = "Money:" + money;
 		InvokeRepeating ("regenStamina", 2f, 2f);
 		InvokeRepeating ("regenHealth", 2f, 2f);
+	}
+
+	public void setDodging()
+	{
+		dodging = !dodging;
 	}
 
 	void regenStamina()
@@ -108,12 +115,14 @@ public class CharacterStatus : MonoBehaviour {
 	
 	public void takeDamage(int dmg)
 	{
-		health -= dmg;
-		healthSlider.value = health;
-		HPTextInfo.text = health + "/" + fullHealth;
+		if (!dodging) {
+			health -= dmg;
+			healthSlider.value = health;
+			HPTextInfo.text = health + "/" + fullHealth;
 
-		if(health<=0)
-			Application.LoadLevel (1);
+			if (health <= 0)
+				Application.LoadLevel (1);
+		}
 	}
 	
 	public void spendStamina(int sta)
