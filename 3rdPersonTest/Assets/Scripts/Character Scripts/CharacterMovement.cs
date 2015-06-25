@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour {
 	
 	private CharacterController controller ;
 	private Vector3 moveDirection = Vector3.zero;
+	private CharacterStatus status;
 
 	private Transform cameraTransform;
 	private float h;
@@ -25,6 +26,7 @@ public class CharacterMovement : MonoBehaviour {
 		controller = GetComponent<CharacterController> ();
 		anim= GetComponent<Animator> ();
 		cameraTransform = Camera.main.transform;
+		status = GetComponent<CharacterStatus> ();
 	}
 	
 	void Update() {
@@ -41,14 +43,14 @@ public class CharacterMovement : MonoBehaviour {
 				idleAttack ();
 				isMoving=true;
 				moveDirection = Vector3.forward * Time.deltaTime;
-				if(Input.GetKey(KeyCode.LeftShift)){
+				if(Input.GetKey(KeyCode.LeftShift)&&status.enoughStamina(1)){
 					anim.SetInteger("move",2);//run
 					speed = 480.0f;
 				}else{
 					anim.SetInteger("move",1);//walk
 					speed = 140.0f;
 				}
-			}else if(Input.GetKey(KeyCode.E)){
+			}else if(Input.GetKey(KeyCode.E)&&status.enoughStamina(10)){
 				idleAttack ();
 				canIdleAttack=true;
 				anim.SetInteger("move",8);//dodgeRight
@@ -56,10 +58,10 @@ public class CharacterMovement : MonoBehaviour {
 
 			moveDirection = transform.TransformDirection(moveDirection);
 
-			if (Input.GetButton ("Jump") && anim.GetInteger("move")==2) {
+			if (Input.GetButton ("Jump") && anim.GetInteger("move")==2&&status.enoughStamina(10)) {
 				idleAttack ();
 				anim.SetInteger ("move", 4);//BigJump
-			}else if (Input.GetButton ("Jump") && (anim.GetInteger("move")==0 || anim.GetInteger("move")==1)) {
+			}else if (Input.GetButton ("Jump") && (anim.GetInteger("move")==0 || anim.GetInteger("move")==1)&&status.enoughStamina(10)) {
 				idleAttack ();
 				anim.SetInteger ("move", 3);//jump
 			}
@@ -73,15 +75,15 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 	void attack(){
-		if (Input.GetMouseButtonDown(0)) {//left click
+		if (Input.GetMouseButtonDown(0)&&status.enoughStamina(5)) {//left click
 			idleAttack();
 			canIdleAttack=true;
 			anim.SetInteger ("move", 5);//normal attack
-		}else if (Input.GetMouseButtonDown(1)) {//right click
+		}else if (Input.GetMouseButtonDown(1)&&status.enoughStamina(10)) {//right click
 			idleAttack();
 			anim.SetInteger ("move", 6);//Special attack 1
 			canIdleAttack=true;
-		}else if (Input.GetMouseButtonDown(2)) {//mid click
+		}else if (Input.GetMouseButtonDown(2)&&status.enoughStamina(20)) {//mid click
 			idleAttack();
 			anim.SetInteger ("move", 7);//Special attack 2
 			canIdleAttack=true;

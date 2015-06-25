@@ -67,9 +67,35 @@ public class CharacterStatus : MonoBehaviour {
 		SPTextInfo.text = stamina + "/" + maxStamina;
 
 		//moneyText.text = "Money:" + money;
-		
+		InvokeRepeating ("regenStamina", 2f, 2f);
+		InvokeRepeating ("regenHealth", 2f, 2f);
 	}
-	
+
+	void regenStamina()
+	{
+		stamina += (int)(maxStamina * 0.01);
+		if (stamina >= maxStamina) {
+			stamina=maxStamina;
+		}
+		staminaSlider.value = stamina;
+		SPTextInfo.text = stamina + "/" + maxStamina;
+	}
+
+	public bool enoughStamina(int value)
+	{
+		return stamina >= value;
+	}
+
+	void regenHealth()
+	{
+		health += (int)(fullHealth * 0.01);
+		if (health >= fullHealth) {
+			health=fullHealth;
+		}
+		healthSlider.value = health;
+		HPTextInfo.text = health + "/" + fullHealth;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyUp (KeyCode.C)) {
