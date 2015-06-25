@@ -25,21 +25,19 @@ public class minimenu : MonoBehaviour {
 
 		if (GUI.Button (new Rect (1627, 945, 43, 90), "")) {//character
 			Debug.Log("character");
-		}
-		if (GUI.Button (new Rect (1675, 945, 43, 90), "")) {//inventory
+			CharacterMenu cm = gameObject.GetComponent<CharacterMenu>();
+			cm.show=!cm.show;
+		}else if (GUI.Button (new Rect (1675, 945, 43, 90), "")) {//inventory
 			Debug.Log("inventory");
 			Inventory inv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
 			inv.show=!inv.show;
-		}
-		if (GUI.Button (new Rect (1723, 945, 43, 90), "")) {//status
+		}else if (GUI.Button (new Rect (1723, 945, 43, 90), "")) {//status
 			Debug.Log("status");
-		}
-		if (GUI.Button (new Rect (1771, 945, 43, 90), "")) {//quests
+		}else if (GUI.Button (new Rect (1771, 945, 43, 90), "")) {//quests
 			Debug.Log("quests");
 			QuestViewer qview = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<QuestViewer>();
 			qview.setShowInfoQuestMenu();
-		}
-		if (GUI.Button (new Rect (1819, 945, 43, 90), "")) {//settings
+		}else if (GUI.Button (new Rect (1819, 945, 43, 90), "")) {//settings
 			Debug.Log("settings");
 			ExitMenu em = gameObject.GetComponent<ExitMenu>();
 			em.show=!em.show;
