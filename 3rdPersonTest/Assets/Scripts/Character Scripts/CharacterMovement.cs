@@ -37,13 +37,13 @@ public class CharacterMovement : MonoBehaviour {
 				canIdleAttack=true;
 				anim.SetInteger("move",8);//dodgeRight
 			}
-			transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
-			/*if(Input.GetKey(KeyCode.D)){
+			//transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
+			if(Input.GetKey(KeyCode.D)){
 				transform.Rotate(Vector3.up, Mathf.Clamp(180f * Time.deltaTime, 0f, 360f));
 			}
 			if(Input.GetKey(KeyCode.A)){
 				transform.Rotate(Vector3.up, -Mathf.Clamp(180f * Time.deltaTime, 0f, 360f));
-			}*/
+			}
 
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
 			moveDirection = transform.TransformDirection(moveDirection);
