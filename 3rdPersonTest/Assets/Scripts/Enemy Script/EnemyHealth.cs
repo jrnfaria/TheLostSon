@@ -52,7 +52,7 @@ public class EnemyHealth : MonoBehaviour
 	}
 
 	void OnDestroy() {
-		GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>().dropSystem();
+		//GameObject.FindGameObjectWithTag ("Inventory").GetComponent<Inventory>().dropSystem();
 	}
 }
 
