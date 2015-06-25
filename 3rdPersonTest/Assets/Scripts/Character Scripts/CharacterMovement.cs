@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour {
 	
 	private CharacterController controller ;
 	private Vector3 moveDirection = Vector3.zero;
+	private CharacterStatus status;
 
 	private Transform cameraTransform;
 	private float h;
@@ -25,6 +26,7 @@ public class CharacterMovement : MonoBehaviour {
 		controller = GetComponent<CharacterController> ();
 		anim= GetComponent<Animator> ();
 		cameraTransform = Camera.main.transform;
+		status = GetComponent<CharacterStatus> ();
 	}
 	
 	void Update() {
@@ -42,6 +44,7 @@ public class CharacterMovement : MonoBehaviour {
 				isMoving=true;
 				moveDirection = Vector3.forward * Time.deltaTime;
 				if(Input.GetKey(KeyCode.LeftShift)){
+
 					anim.SetInteger("move",2);//run
 					speed = 480.0f;
 				}else{
@@ -51,6 +54,7 @@ public class CharacterMovement : MonoBehaviour {
 			}else if(Input.GetKey(KeyCode.E)){
 				idleAttack ();
 				canIdleAttack=true;
+
 				anim.SetInteger("move",8);//dodgeRight
 			}
 
