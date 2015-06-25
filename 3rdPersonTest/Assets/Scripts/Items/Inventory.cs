@@ -158,12 +158,12 @@ public class Inventory : MonoBehaviour {
 		GUI.matrix = matrix;
 
 	
-		Rect slotRect = new Rect(1700,980,70,70);
+		Rect slotRect = new Rect(885,980,70,70);
 		GUI.Box (slotRect,"");
 		shortcutOptions (slotRect,slotItems.Count-2,e);
 
 
-		slotRect=new Rect(1780,980,70,70);
+		slotRect=new Rect(965,980,70,70);
 		GUI.Box (slotRect,"");
 		shortcutOptions (slotRect,slotItems.Count-1,e);
 
@@ -172,13 +172,13 @@ public class Inventory : MonoBehaviour {
 
 		if (show) {
 
-			GUI.Box (new Rect(650,250,500,500),"inventory");
+			GUI.Box (new Rect(710,250,500,500),"inventory");
 
 			for (int x=0;x<slotsX;x++)
 			{
 				for (int y=0;y<slotsY;y++)
 				{
-					slotRect = new Rect(700 + x * 80,300+y*80,70,70);
+					slotRect = new Rect(760 + x * 80,300+y*80,70,70);
 
 					GUI.Box (slotRect,slotItems[i].image);
 
@@ -186,7 +186,7 @@ public class Inventory : MonoBehaviour {
 					{
 					Color c = GUI.backgroundColor;
 					GUI.backgroundColor = Color.clear;
-					GUI.Label(new Rect(700 + x * 80,300+y*80,20,20),slotItems[i].itemAmount.ToString());
+					GUI.Label(new Rect(760 + x * 80,300+y*80,20,20),slotItems[i].itemAmount.ToString());
 					GUI.backgroundColor=c;
 					}
 

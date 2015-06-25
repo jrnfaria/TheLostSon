@@ -27,8 +27,8 @@ public class QuestViewer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.Q) && questWasAccepted) {
-			showInfoQuestMenu=true;
+		if (Input.GetKeyDown (KeyCode.Q) && questWasAccepted) {
+			showInfoQuestMenu=!showInfoQuestMenu;
 		}
 	}
 	
@@ -138,6 +138,12 @@ public class QuestViewer : MonoBehaviour {
 		//Cancel button
 		if (GUI.Button (new Rect (460, 770, 160, 40), "Cancel")) {
 			questRange.setDisplayedGUI(false);
+		}
+	}
+
+	public void setShowInfoQuestMenu(){
+		if (questWasAccepted) {
+			showInfoQuestMenu = !showInfoQuestMenu;
 		}
 	}
 
