@@ -33,6 +33,8 @@ public class minimenu : MonoBehaviour {
 			inv.show=!inv.show;
 		}else if (GUI.Button (new Rect (1723, 945, 43, 90), "")) {//status
 			Debug.Log("status");
+			StatusMenu sm = gameObject.GetComponent<StatusMenu>();
+			sm.show=!sm.show;
 		}else if (GUI.Button (new Rect (1771, 945, 43, 90), "")) {//quests
 			Debug.Log("quests");
 			QuestViewer qview = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<QuestViewer>();

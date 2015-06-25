@@ -213,4 +213,40 @@ public class CharacterStatus : MonoBehaviour {
 	public void CanAttack2(){
 		canAttack = specialAttack2Damage;
 	}
+
+	public int getHealth(){
+		return health;
+	}
+	
+	public int getMaxHealth(){
+		return fullHealth;
+	}
+	
+	public float getHealthRegen(){
+		return fullHealth*0.01f;
+	}
+	
+	public int getStamina(){
+		return stamina;
+	}
+	
+	public int getMaxStamina(){
+		return maxStamina;
+	}
+	
+	public float getStaminaRegen(){
+		return fullHealth*0.01f;
+	}
+	
+	public int getExp(){
+		return exp;
+	}
+	
+	public int getMaxExp(){
+		return maxExp;
+	}
+
+	public int getLevel(){
+		return lvl;
+	}
 }
