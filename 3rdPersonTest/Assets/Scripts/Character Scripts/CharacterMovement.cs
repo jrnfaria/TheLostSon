@@ -14,23 +14,38 @@ public class CharacterMovement : MonoBehaviour {
 	private CharacterController controller ;
 	private Vector3 moveDirection = Vector3.zero;
 
+	private Transform cameraTransform;
+	private float h;
+	private float v;
+	private Vector3 lastDirection;
+	public float turnSmoothing = 3.0f;
+	private bool isMoving;
+
 	void Start () {
 		controller = GetComponent<CharacterController> ();
 		anim= GetComponent<Animator> ();
+		cameraTransform = Camera.main.transform;
 	}
 	
 	void Update() {
-		if (controller.isGrounded) {
-			anim.SetInteger("move",0);
+		h = Input.GetAxis ("Horizontal");
+		v = Input.GetAxis("Vertical");
+		Rotating(h, v);
 
+		if (controller.isGrounded) {
+			isMoving=false;
+			anim.SetInteger("move",0);
+			moveDirection = new Vector3(0,0,0);
 			if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) ||Input.GetKey(KeyCode.D)){
 				idleAttack ();
+				isMoving=true;
+				moveDirection = Vector3.forward * Time.deltaTime;
 				if(Input.GetKey(KeyCode.LeftShift)){
 					anim.SetInteger("move",2);//run
-					speed = 15.0f;
+					speed = 480.0f;
 				}else{
 					anim.SetInteger("move",1);//walk
-					speed = 5.0f;
+					speed = 140.0f;
 				}
 			}else if(Input.GetKey(KeyCode.E)){
 				idleAttack ();
@@ -38,14 +53,14 @@ public class CharacterMovement : MonoBehaviour {
 				anim.SetInteger("move",8);//dodgeRight
 			}
 			//transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
-			if(Input.GetKey(KeyCode.D)){
+			/*if(Input.GetKey(KeyCode.D)){
 				transform.Rotate(Vector3.up, Mathf.Clamp(180f * Time.deltaTime, 0f, 360f));
 			}
 			if(Input.GetKey(KeyCode.A)){
 				transform.Rotate(Vector3.up, -Mathf.Clamp(180f * Time.deltaTime, 0f, 360f));
-			}
+			}*/
 
-			moveDirection = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
+			//moveDirection = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
 			moveDirection = transform.TransformDirection(moveDirection);
 
 			if (Input.GetButton ("Jump") && anim.GetInteger("move")==2) {
@@ -92,6 +107,48 @@ public class CharacterMovement : MonoBehaviour {
 
 	public int getMove(){
 		return anim.GetInteger ("move");
+	}
+
+	Vector3 Rotating(float horizontal, float vertical)
+	{
+		Vector3 forward = cameraTransform.TransformDirection(Vector3.forward);
+		forward.y = 0.0f;
+		forward = forward.normalized;
+		
+		Vector3 right = new Vector3(forward.z, 0, -forward.x);
+		
+		Vector3 targetDirection;
+		
+		targetDirection = forward * vertical + right * horizontal;
+		
+		if(isMoving && targetDirection != Vector3.zero)
+		{
+			Quaternion targetRotation = Quaternion.LookRotation (targetDirection, Vector3.up);
+			
+			
+			Quaternion newRotation = Quaternion.Slerp(GetComponent<Rigidbody>().rotation, targetRotation, turnSmoothing * Time.deltaTime);
+			GetComponent<Rigidbody>().MoveRotation (newRotation);
+			lastDirection = targetDirection;
+		}
+		//idle - fly or grounded
+		if(!(Mathf.Abs(h) > 0.9 || Mathf.Abs(v) > 0.9))
+		{
+			Repositioning();
+		}
+		
+		return targetDirection;
+	}	
+	
+	private void Repositioning()
+	{
+		Vector3 repositioning = lastDirection;
+		if(repositioning != Vector3.zero)
+		{
+			repositioning.y = 0;
+			Quaternion targetRotation = Quaternion.LookRotation (repositioning, Vector3.up);
+			Quaternion newRotation = Quaternion.Slerp(GetComponent<Rigidbody>().rotation, targetRotation, turnSmoothing * Time.deltaTime);
+			GetComponent<Rigidbody>().MoveRotation (newRotation);
+		}
 	}
 	
 }
