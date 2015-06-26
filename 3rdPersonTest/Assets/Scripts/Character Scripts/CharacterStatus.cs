@@ -69,7 +69,7 @@ public class CharacterStatus : MonoBehaviour {
 		SPTextInfo.text = stamina + "/" + maxStamina;
 
 		//moneyText.text = "Money:" + money;
-		InvokeRepeating ("regenStamina", 2f, 2f);
+		InvokeRepeating ("regenStamina", 1f, 1f);
 		InvokeRepeating ("regenHealth", 2f, 2f);
 	}
 
@@ -121,7 +121,13 @@ public class CharacterStatus : MonoBehaviour {
 			HPTextInfo.text = health + "/" + fullHealth;
 
 			if (health <= 0)
+			{
+				DestroyObject(GameObject.FindGameObjectWithTag("MainCamera"));
+				DestroyObject(GameObject.FindGameObjectWithTag("Character"));
+				DestroyObject(GameObject.FindGameObjectWithTag("Inventory"));
+				DestroyObject(GameObject.FindGameObjectWithTag("HUD"));
 				Application.LoadLevel (1);
+			}
 		}
 	}
 	
