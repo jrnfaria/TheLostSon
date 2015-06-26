@@ -9,6 +9,7 @@ public class gate : MonoBehaviour {
 	private GameObject HUD;
 	private GameObject inventory;
 	private GameObject Tyson;
+	private GameObject Minimap;
 
 
 	// Use this for initialization
@@ -16,6 +17,7 @@ public class gate : MonoBehaviour {
 		HUD = GameObject.FindGameObjectWithTag ("HUD");
 		inventory = GameObject.FindGameObjectWithTag ("Inventory");
 		Tyson= GameObject.FindGameObjectWithTag ("Character");
+		Minimap= GameObject.FindGameObjectWithTag ("Minimap");
 
 	}
 
@@ -26,6 +28,9 @@ public class gate : MonoBehaviour {
 			DontDestroyOnLoad(inventory);
 			DontDestroyOnLoad(Tyson);
 			DontDestroyOnLoad(Camera.main);
+	
+
+
 
 			Application.LoadLevel (dimension);
 			Tyson.transform.position=beginPosition;

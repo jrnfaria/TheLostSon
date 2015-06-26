@@ -126,6 +126,7 @@ public class CharacterStatus : MonoBehaviour {
 				DestroyObject(GameObject.FindGameObjectWithTag("Character"));
 				DestroyObject(GameObject.FindGameObjectWithTag("Inventory"));
 				DestroyObject(GameObject.FindGameObjectWithTag("HUD"));
+				DestroyObject(GameObject.FindGameObjectWithTag("Minimap"));
 				Application.LoadLevel (1);
 			}
 		}
