@@ -9,11 +9,12 @@ public class minimenu : MonoBehaviour {
 	Matrix4x4 matrix;
 	public GUISkin customSkin;
 
-	public Texture aTexture;
+	private Texture aTexture;
 
 	// Use this for initialization
 	void Start () {
 		matrix = Matrix4x4.TRS (Vector3.zero, Quaternion.identity,new  Vector3(Screen.width/virtualWidth, Screen.height/virtualHeight, 1.0f));
+		aTexture =  (Texture) Resources.Load("GUI/menu");
 	}
 	
 	// Update is called once per frame
